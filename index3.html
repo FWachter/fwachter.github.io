@@ -1,0 +1,321 @@
+<!DOCTYPE HTML>
+
+<head>
+	<title>Frederick Wachter</title>
+	<link rel="shorcut icon" href="img/Logo_Small.png"/>
+	<!--<link rel="stylesheet" type="text/css" href="index.css"/>-->
+	
+	<meta name="description" content="Official website for the portfolio of  Frederick Wachter"/>
+	<meta name="keywords" content="Frederick Wachter, Drexel University, Drexel Engineering"/>
+	<meta name="author" content="Frederick Wachter"/>
+	<!--<meta name="google-site-verification" content=""/>-->
+	
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+	
+	<style>
+		/* -------------------- ----- -------------------- */
+		/* -------------------- Fonts -------------------- */
+		/* -------------------- ----- -------------------- */
+		@font-face {
+			font-family:SlimJoe;
+			src: url("font/Slim_Joe.otf") format("opentype");
+		}
+		@font-face {
+			font-family:HelveticaNeue-Thin;
+			src: url("font/HelveticaNeue-Thin.otf") format("opentype");
+		}
+		@font-face {
+			font-family:HelveticaNeue-Light;
+			src: url("font/HelveticaNeue-Light.otf") format("opentype");
+		}
+		
+		/* -------------------- --------- -------------------- */
+		/* -------------------- Reset CSS -------------------- */
+		/* -------------------- --------- -------------------- */
+		html {
+			background-color:#0A0A0A;
+		}
+		body, main, div {
+			background-color:white;
+			cursor:auto;
+		}
+		html, body, main {
+			height:100%;
+			width:100%;
+			overflow:hidden;
+		}
+		html, body, main, div, section, img, h1 {
+			margin:0;
+			padding:0;
+			z-index:0;
+			font-family:HelveticaNeue-Thin, Helvetica, Arial;
+		}
+		section {
+			width:100%;
+		}
+		h1 {
+			font-size:30px;
+		}
+		.icon:hover {
+			opacity:0.8;
+			cursor:pointer;
+		}
+		
+		/* -------------------- --------------- -------------------- */
+		/* -------------------- Sidebar Seciton -------------------- */
+		/* -------------------- --------------- -------------------- */
+		#sidebar {
+			position:fixed;
+			top:200px;
+			right:0;
+			height:172px;
+			width:64px;
+			border-radius:5px 0px 0px 5px;
+			background-color:black;
+			z-index:2;
+		}
+		.sidebarIcon {
+			margin:7px 7px 0px 7px;
+			width:50px;
+		}
+				
+		/* -------------------- ------------- -------------------- */
+		/* -------------------- Intro Seciton -------------------- */
+		/* -------------------- ------------- -------------------- */
+		#intro {
+			position:relative;
+			background:#0A0A0A url("img/Drexel_MainBuilding.png") no-repeat center center;
+			background-size:cover;
+		}
+		#logo {
+			position:absolute;
+			margin:-73.5px 0 0 -125px;
+			top:50%;
+			left:50%;
+			background-color:rgba(0,0,0,0.88);
+			-webkit-box-shadow:0px 0px 55px 40px rgba(0,0,0,0.88);
+			-moz-box-shadow:0px 0px 55px 40px rgba(0,0,0,0.88);
+			-o-box-shadow:0px 0px 55px 40px rgba(0,0,0,0.88);
+			box-shadow:0px 0px 55px 40px rgba(0,0,0,0.88);
+			-webkit-transition:margin-left 1.5s, top 1.5s, box-shadow 1.5s, background-color 1.5s;
+			transition:margin-left 1.5s, top 1.5s, box-shadow 1.5s, background-color 1.5s;
+		}
+		#mainLogo {
+			-webkit-transition:width 1.5s;
+			transition:width 1.5s;
+		}
+		#introText {
+			position:fixed;
+			margin:110px 0 0 -187px;
+			top:50%;
+			left:50%;
+			font-size:50px;
+			color:white;
+			-webkit-transition:opacity 1s;
+			transition:opacity 1s;
+		}
+		
+		/* -------------------- -------------- -------------------- */
+		/* -------------------- Footer Seciton -------------------- */
+		/* -------------------- -------------- -------------------- */
+		#footer {
+			position:fixed;
+			bottom:0;
+			height:50px;
+			width:100%;
+			text-align:center;
+		}
+		.footerButton {
+			margin:0px 10px 0px 10px;
+			display:inline-block;
+		}
+		.active {
+			background-color:black;
+			height:20px;
+			width:20px;
+			border:2px solid white;
+			border-radius:12px;
+			-webkit-transition:background-color 1.5s;
+			transition:background-color 1.5s;
+		}
+		.notActive {
+			background-color:white;
+			height:24px;
+			width:24px;
+			border-radius:12px;
+			-webkit-transition:background-color 1.5s;
+			transition:background-color 1.5s;
+		}
+
+		/* -------------------- ----- -------------------- */
+		/* -------------------- Pages -------------------- */
+		/* -------------------- ----- -------------------- */
+		#page1 {
+			background:#0A0A0A url("img/ETH_ASL.jpg") no-repeat center center;
+			background-size:cover;
+		}
+		#page2 {
+			background:#0A0A0A url("img/DrexelHyperloop.jpg") no-repeat center center;
+			background-size:cover;
+		}
+		#page3 {
+			background:#0A0A0A url("img/DrexelHyperloopExpo.png") no-repeat center center;
+			background-size:cover;
+		}
+		.page {
+			position:absolute;
+			top:0;
+			-webkit-transition:left 1.5s;
+			transition:left 1.5s;
+		}
+	</style>
+</head>
+
+<body>
+	
+	<header></header>
+	
+	<main>
+		<div>
+			<!--=============== ======= ===============-->
+		    <!--=============== Sidebar ===============-->
+			<!--=============== ======= ===============-->
+			<section id="sidebar">
+				<a href="https://www.facebook.com/freddy.wachter" target="_blank">	
+					<img class="sidebarIcon icon" src="img/icons/Facebook.png"/>
+				</a>
+				<a href="https://www.youtube.com/channel/UCgnxbWOmcXFhQtGtEecXSpg" target="_blank">
+					<img class="sidebarIcon icon" src="img/icons/YouTube.png"/>
+				</a>
+				<a href="https://www.linkedin.com/in/frederickwachter" target="_blank">
+					<img class="sidebarIcon icon" src="img/icons/LinkedIn.png"/>
+				</a>
+			</section>
+			
+			<!--=============== ===== ===============-->
+		    <!--=============== Pages ===============-->
+			<!--=============== ===== ===============-->
+			<section id="intro" class="page">
+				<p id="introText">Frederick Wachter</p>
+			</section>
+			<section id="page1" class="page"></section>
+			<section id="page2" class="page"></section>
+			<section id="page3" class="page"></section>
+			
+			<!--=============== ====== ===============-->
+		    <!--=============== Footer ===============-->
+			<!--=============== ====== ===============-->
+			<div id="logo">
+				<img id="mainLogo" src="img/Logo_Large.png" width="250px"/>
+			</div>
+			<section id="footer">
+				<div class="footerButton active"></div>
+				<div class="footerButton icon notActive"></div>
+				<div class="footerButton icon notActive"></div>
+				<div class="footerButton icon notActive"></div>
+			</section>
+		<div>
+	</main>
+	
+	<script>
+		/* -------------------- --------- -------------------- */
+		/* -------------------- Variables -------------------- */
+		/* -------------------- --------- -------------------- */
+		var pageIndex = 0; // indicated the current page of the user
+		var totalPages = $(".footerButton").length; // indicates the amount of available pages on the webpage
+
+		/* -------------------- ------------- -------------------- */
+		/* -------------------- Window Resize -------------------- */
+		/* -------------------- ------------- -------------------- */
+		windowResize();
+		$(window).resize(function() {windowResize();});
+		function windowResize() {
+			var windowWidth = $(window).width();
+			var windowHeight = $(window).height();
+			$("#intro").css({
+				"height":windowHeight + "px"
+			});
+			$(".page").css({
+				"width":windowWidth + "px",
+				"height":windowHeight + "px"
+			});
+
+			offsetPages(pageIndex,windowWidth);
+		}
+
+		/* -------------------- -------- -------------------- */
+		/* -------------------- Function -------------------- */
+		/* -------------------- -------- -------------------- */
+		function offsetPages(index,windowWidth) {
+			var offset = (-index) * windowWidth;
+			for (var i = 0; i < totalPages; i++) {
+				$(".page").eq(i).css({
+					"left":offset + (windowWidth * i) + "px"
+				});
+			}
+		}
+		function toggleLogoPosition(previousIndex,currentIndex) {
+			if ((previousIndex == 0) && (pageIndex > 0)) {
+				var windowHeight = $(window).height();
+				$("#logo").css({
+					"margin-left":"-50px",
+					"margin-top":"-75px",
+					"top":windowHeight - 50 + "px",
+					"box-shadow":"none",
+					"background-color":"rgba(0,0,0,0)"
+				});
+				$("#mainLogo").css({
+					"width":"100px"
+				});
+			} else if ((previousIndex > 0) && (pageIndex == 0)) {
+				$("#logo").css({
+					"margin-left":"",
+					"margin-top":"",
+					"top":"",
+					"box-shadow":"",
+					"background-color":""
+				});
+				$("#mainLogo").css({
+					"width":""
+				});
+			}
+		}
+		function toggleActivePage(previousIndex,currentIndex) {
+			$(".footerButton").eq(previousIndex).removeClass("active");
+			$(".footerButton").eq(previousIndex).addClass("notActive");
+			$(".footerButton").eq(previousIndex).addClass("icon");
+
+			$(".footerButton").eq(currentIndex).addClass("active");
+			$(".footerButton").eq(currentIndex).removeClass("notActive");
+			$(".footerButton").eq(currentIndex).removeClass("icon");
+		}
+
+		/* -------------------- --------------- -------------------- */
+		/* -------------------- Click Functions -------------------- */
+		/* -------------------- --------------- -------------------- */
+		$(".footerButton").click(function() {
+			var windowWidth = $(window).width();
+			var previousIndex = pageIndex;
+			pageIndex = $(this).index();
+
+			if (previousIndex != pageIndex) {
+				offsetPages(pageIndex,windowWidth);
+				toggleActivePage(previousIndex,pageIndex);
+				toggleLogoPosition(previousIndex,pageIndex);
+
+				if (pageIndex != 0) {
+					$("#introText").css({
+						"opacity":"0"
+					});
+				} else if (pageIndex == 0) {
+					$("#introText").css({
+						"opacity":"1"
+					});
+				} else {
+					alert("Error (1): Current page index is incorrect.")
+				}
+			}
+		});
+	</script>
+	
+</body>
