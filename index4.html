@@ -138,9 +138,18 @@
 		#footer {
 			position:fixed;
 			bottom:0;
-			height:50px;
+			height:42px;
 			width:100%;
 			text-align:center;
+		}
+		#footerText {
+			position:absolute;
+			top:-15px;
+			left:5px;
+			font-size:25px;
+			color:rgba(255,255,255,0.8);
+			-webkit-transition:all 1s;
+			transition:all 1s;
 		}
 		.footerButton {
 			margin:0px 10px 0px 10px;
@@ -229,19 +238,38 @@
 			padding-top:8px;
 			font-size:30px;
 		}
-		.input_page1 {
-			margin-bottom:80px;
-			height:500px;
-			width:800px;
-			background:-webkit-linear-gradient(90deg,rgba(255,255,255,0) 0%,rgba(166,78,116,0.5) 40%,rgba(95,44,130,1) 100%);
-			background:linear-gradient(90deg,rgba(255,255,255,0) 0%,rgba(166,78,116,0.5) 40%,rgba(95,44,130,1) 100%);
+		#background1_job {
+			height:100%;
+			width:100%;
+			background:url("img/work/ASL.png") no-repeat center center;
+			background-size:contain;
+		}
+		#background2_job {
+			height:100%;
+			width:100%;
+			background:url("img/work/PTW.png") no-repeat center center;
+			background-size:contain;
+		}
+		.job {
+			padding:10px;
+			position:relative;
+			margin:30px auto;
+			width:500px;
+			height:200px;
+			background-color:none;
+			border-radius:5px;
+			background:-webkit-linear-gradient(-45deg,rgba(192,192,192,0.4) 0%,rgba(95,44,130,0.8) 100%);
+			background:linear-gradient(-45deg,rgba(192,192,192,0.4) 0%,rgba(95,44,130,0.8) 100%);
+		}
+		.pointer:hover {
+			cursor:pointer;
 		}
 	</style>
 </head>
 
 <body>
 	
-	<header></header>
+	<!-- <header></header> -->
 	
 	<main>
 		<div>
@@ -276,11 +304,13 @@
 							<p id="hideShowVideo_Page1" class="icon">Hide Videos</p>
 						</div>
 
-						<div class="input_page1 right">
-							<img src="img/work/ASL.png" width="400px"/>
+						<div class="job icon">
+							<div id="background1_job" class="pointer">
+							</div>
 						</div>
-						<div class="input_page1 left">
-							<img src="img/work/PTW.png" width="300px"/>
+						<div class="job icon">
+							<div id="background2_job" class="pointer">
+							</div>
 						</div>
 					</div>
 				</div>
@@ -303,6 +333,7 @@
 				<div class="footerButton icon notActive"></div>
 				<div class="footerButton icon notActive"></div>
 				<div class="footerButton icon notActive"></div>
+				<p id="footerText">Home</p>
 			</section>
 		<div>
 	</main>
@@ -357,14 +388,14 @@
 			var windowHeight = $(window).height();
 			if ((windowResize == 1) && (currentIndex > 0)) {
 				$("#logo").css({
-					"top":windowHeight - 50 + "px"
+					"top":windowHeight - 42 + "px"
 				});
 			} else if ((previousIndex == 0) && (pageIndex > 0)) {
 				$("#logo").css({
 					"box-shadow":"none",
 					"margin-top":"-75px",
 					"margin-left":"-50px",
-					"top":windowHeight - 50 + "px",
+					"top":windowHeight - 42 + "px",
 					"background-color":"rgba(0,0,0,0)"
 				});
 				$("#mainLogo").css({
@@ -474,6 +505,17 @@
 					
 			}
 		}
+		function getPageName(index) {
+			if (index == 0) {
+				return "Home";
+			} else if (index == 1) {
+				return "Engineering Experience";
+			} else if (index == 2) {
+				return "Project Experience";
+			} else if (index == 3) {
+				return "Contact Me";
+			}
+		}
 
 		/* -------------------- --------------- -------------------- */
 		/* -------------------- Click Functions -------------------- */
@@ -505,6 +547,9 @@
 				sidebarDisplayFlag = displaySidebar;
 				toggleSidebarDisplay();
 			}
+
+			var pageName = getPageName(pageIndex);
+			$("#footerText").text(pageName);
 		});
 		$("#showVideo").click(function() {
 			if (videoDisplayFlag_Page1 == 0) {
