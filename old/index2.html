@@ -1,0 +1,358 @@
+<!DOCTYPE HTML>
+
+<head>
+	<title>Frederick Wachter</title>
+	<link rel="shorcut icon" href="img/Logo_Small.png"/>
+	<!--<link rel="stylesheet" type="text/css" href="index.css"/>-->
+	
+	<meta name="description" content="Official website for the portfolio of  Frederick Wachter"/>
+	<meta name="keywords" content="Frederick Wachter, Drexel University, Drexel Engineering"/>
+	<meta name="author" content="Frederick Wachter"/>
+	<!--<meta name="google-site-verification" content=""/>-->
+	
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+	
+	<style>
+		/* -------------------- ----- -------------------- */
+		/* -------------------- Fonts -------------------- */		
+		/* -------------------- ----- -------------------- */
+		@font-face {
+			font-family:SlimJoe;
+			src: url("font/Slim_Joe.otf") format("opentype");
+		}
+		@font-face {
+			font-family:HelveticaNeue-Thin;
+			src: url("font/HelveticaNeue-Thin.otf") format("opentype");
+		}
+		@font-face {
+			font-family:HelveticaNeue-Light;
+			src: url("font/HelveticaNeue-Light.otf") format("opentype");
+		}
+		
+		/* -------------------- --------- -------------------- */
+		/* -------------------- Reset CSS -------------------- */	
+		/* -------------------- --------- -------------------- */
+		html {
+			background-color:#0A0A0A;
+		}
+		body, main, div {
+			background-color:white;
+			cursor:auto;
+		}
+		html, body, main {
+			height:100%;
+			width:100%;
+			overflow:hidden;
+		}
+		html, body, main, div, section, img, h1 {
+			margin:0;
+			padding:0;
+			z-index:0;
+			font-family:HelveticaNeue-Thin, Helvetica, Arial;
+		}
+		section {
+			width:100%;
+		}
+		h1 {
+			font-size:30px;
+		}
+		.icon:hover {
+			opacity:0.8;
+			cursor:pointer;
+		}
+		.active {
+			background-color:black;
+			height:20px;
+			width:20px;
+			border:2px solid white;
+			border-radius:12px;
+		}
+		.notActive {
+			background-color:white;
+			height:24px;
+			width:24px;
+			border-radius:12px;
+		}
+		
+		/* -------------------- --------------- -------------------- */
+		/* -------------------- Sidebar Seciton -------------------- */		
+		/* -------------------- --------------- -------------------- */
+		#sidebar {
+			position:fixed;
+			top:200px;
+			right:0;
+			height:172px;
+			width:64px;
+			border-radius:5px 0px 0px 5px;
+			background-color:black;
+			z-index:2;
+		}
+		.sidebarIcon {
+			margin:7px 7px 0px 7px;
+			width:50px;
+		}
+				
+		/* -------------------- ------------- -------------------- */
+		/* -------------------- Intro Seciton -------------------- */			
+		/* -------------------- ------------- -------------------- */
+		#intro {
+			position:relative;
+			height:800px;
+			background:#0A0A0A url("img/Drexel_MainBuilding.png") no-repeat center center;
+			background-size:cover;
+		}
+		#logo {
+			position:absolute;
+			margin:-73.5px 0 0 -125px;
+			top:50%;
+			left:50%;
+			background-color:rgba(0,0,0,0.88);
+			-webkit-box-shadow:0px 0px 55px 40px rgba(0,0,0,0.88);
+			-moz-box-shadow:0px 0px 55px 40px rgba(0,0,0,0.88);
+			-o-box-shadow:0px 0px 55px 40px rgba(0,0,0,0.88);
+			box-shadow:0px 0px 55px 40px rgba(0,0,0,0.88);
+		}
+		#introText {
+			position:fixed;
+			margin:110px 0 0 -192px;
+			top:50%;
+			left:50%;
+			font-size:50px;
+			color:white;
+		}
+		
+		/* -------------------- -------------- -------------------- */
+		/* -------------------- Footer Seciton -------------------- */		
+		/* -------------------- -------------- -------------------- */
+		#footer {
+			position:fixed;
+			bottom:0;
+			height:50px;
+			width:100%;
+			text-align:center;
+		}
+		.footerButton {
+			margin:0px 10px 0px 10px;
+			display:inline-block;
+		}
+		
+		
+		
+		/* OLD CODE */
+		
+		/*	
+		/* -------------------- -------------- -------------------- */
+		/* -------------------- Footer Seciton -------------------- */		
+		/* -------------------- -------------- -------------------- *
+		#footer {
+			bottom:0;
+			height:150px;
+			width:100%;
+			opacity:0.9;
+			background-color:rgb(9,151,156);
+			-webkit-box-shadow:0px 0px 15px 4px #0A0A0A;
+			-moz-box-shadow:0px 0px 15px 4px #0A0A0A;
+			-o-box-shadow:0px 0px 15px 4px #0A0A0A;
+			box-shadow:0px 0px 15px 4px #0A0A0A;
+		}
+		#footerSpacer {
+			height:150px;
+		}
+			
+		/* -------------------- ------------ -------------------- */
+		/* -------------------- Work Seciton -------------------- */		
+		/* -------------------- ------------ -------------------- *
+		#work {
+			height:300px;
+			text-align:center;
+			color:white;
+			background-color:black;
+		}
+		#workTitle {
+			padding:30px 0 10px 0;
+		}
+		.job {
+			position:relative;
+			float:left;
+			height:200px;
+			width:50%;
+			-webkit-box-shadow:0px 7px 10px -8px #0A0A0A inset, 0px -7px 10px -8px #0A0A0A inset;
+			-moz-box-shadow:0px 7px 10px -8px #0A0A0A inset, 0px -7px 10px -8px #0A0A0A inset;
+			-o-box-shadow:0px 7px 10px -8px #0A0A0A inset, 0px -7px 10px -8px #0A0A0A inset;
+			box-shadow:0px 7px 10px -8px #0A0A0A inset, 0px -7px 10px -8px #0A0A0A inset;
+		}
+		#job_color1, #job_color2 {
+			height:100%;
+			width:100%;
+		}
+		#job_color1 {
+			background-color:rgba(9,151,156,0.5);
+		}
+		#job_color2 {
+			background-color:rgba(204,204,204,0.5);
+		}
+		#job1 {
+			background:white url("img/work/asl.png") no-repeat center center;
+		}
+		#job2 {
+			background:white url("img/work/ptw.png") no-repeat center center;
+		}
+		#job1, #job2 {
+			background-size:250px auto;
+		}
+		
+		/* -------------------- ---------------- -------------------- */
+		/* -------------------- Projects Seciton -------------------- */	
+		/* -------------------- ---------------- -------------------- *
+		#projects {
+			height:500px;
+			text-align:center;
+			background:#0A0A0A url("img/Drexel_URBNBlur.jpg") no-repeat center center;
+			background-size:cover;
+		}
+		#projectsTitle {
+			padding:30px 0 10px 0;
+			color:white;
+		}
+		.project {
+			margin:5px;
+			height:150px;
+			width:200px;
+			display:inline-block;
+			border:1px solid black;
+			border-radius:5px;
+			-webkit-box-shadow:0px 6px 15px 1px rgba(4,4,4,0.9);
+			-moz-box-shadow:0px 6px 15px 1px rgba(4,4,4,0.9);
+			-o-box-shadow:0px 6px 15px 1px rgba(4,4,4,0.9);
+			box-shadow:0px 6px 15px 1px rgba(4,4,4,0.9);
+		}
+		#project_color1, #project_color2, #project_color3, #project_color4 {
+			height:100%;
+			width:100%;
+			border-radius:5px;
+		}
+		#project_color1 {
+			background-color:rgba(255,102,0,0.5);
+		}
+		#project_color2 {
+			background-color:rgba(15,191,242,0.5);
+		}
+		#project_color3 {
+			background-color:rgba(12,242,20,0.5);
+		}
+		#project_color4 {
+			background-color:rgba(111,14,242,0.5);
+		}
+		#project1 {
+			background:rgba(205,205,205,0.8) url("img/work/asl.png") no-repeat center center;
+		}
+		#project2 {
+			background:rgba(205,205,205,0.8) url("img/work/ptw.png") no-repeat center center;
+		}
+		#project3 {
+			background:rgba(205,205,205,0.8) url("img/work/asl.png") no-repeat center center;
+		}
+		#project4 {
+			background:rgba(205,205,205,0.8) url("img/work/ptw.png") no-repeat center center;
+		}
+		#project1, #project2, #project3, #project4 {
+			background-size:180px auto;
+		}
+		.projectImage {
+			margin-top:auto;
+			width:180px;
+			position:relative;
+			left:0;
+			top:0;
+		}*/
+	</style>
+</head>
+
+<body>
+	
+	<header></header>
+	
+	<main>
+		<div>
+			<section id="sidebar">
+				<a href="https://www.facebook.com/freddy.wachter" target="_blank">	
+					<img class="sidebarIcon icon" src="img/icons/Facebook.png"/>
+				</a>
+				<a href="https://www.youtube.com/channel/UCgnxbWOmcXFhQtGtEecXSpg" target="_blank">
+					<img class="sidebarIcon icon" src="img/icons/YouTube.png"/>
+				</a>
+				<a href="https://www.linkedin.com/in/frederickwachter" target="_blank">
+					<img class="sidebarIcon icon" src="img/icons/LinkedIn.png"/>
+				</a>
+			</section>
+			
+			<section id="intro">
+				<div id="logo">
+					<img src="img/Logo_Large.png" width="250px"/>
+				</div>
+				<p id="introText">Frederick Wachter</p>
+			</section>
+			
+			<section id="footer">
+				<div class="footerButton active"></div>
+				<div class="footerButton icon notActive"></div>
+				<div class="footerButton icon notActive"></div>
+				<div class="footerButton icon notActive"></div>
+			</section>
+			
+			<!--<section id="work">
+				<h1 id="workTitle">Work Experience</h1>
+				<div id="job1" class="job icon">
+					<div id="job_color1"></div>
+				</div>
+				<div id="job2" class="job icon">
+					<div id="job_color2"></div>
+				</div>
+			</section>
+			
+			<section id="projects">
+				<h1 id="projectsTitle">Engineering Experience</h1>
+				<div id="project1" class="project icon">
+					<div id="project_color1"></div><!-- LIT --
+				</div>
+				<div id="project2" class="project icon">
+					<div id="project_color2"></div><!-- Hyperloop --
+				</div>
+				<div id="project3" class="project icon">
+					<div id="project_color3"></div><!-- THOR --
+				</div>
+				<div id="project4" class="project icon">
+					<div id="project_color4"></div><!-- Hex Copter --
+				</div>
+				<div id="project1" class="project icon">
+					<div id="project_color1"></div><!-- Hess --
+				</div>
+				<div id="project2" class="project icon">
+					<div id="project_color2"></div><!-- STARS --
+				</div>
+				<div id="project3" class="project icon">
+					<div id="project_color3"></div><!-- RASC-AL --
+				</div>
+				<div id="project4" class="project icon">
+					<div id="project_color4"></div><!-- CCT --
+				</div>
+			</section>
+			
+			<section id="footerSpacer"/>
+			<section id="footer">
+			</section>-->
+		<div>
+	</main>
+	
+	<script>
+		windowResize();
+	
+		$(window).resize(function() {
+			windowResize();
+		});
+		function windowResize() {
+			$("#intro").css({height:$(window).height()});
+		}
+	</script>
+	
+</body>

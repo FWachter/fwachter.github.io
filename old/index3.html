@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 
 <head>
-	<title>Frederick Wachter Engineering Portfolio</title>
+	<title>Frederick Wachter</title>
 	<link rel="shorcut icon" href="img/Logo_Small.png"/>
 	<!--<link rel="stylesheet" type="text/css" href="index.css"/>-->
 	
@@ -61,9 +61,6 @@
 			opacity:0.8;
 			cursor:pointer;
 		}
-		.pointer:hover {
-			cursor:pointer;
-		}
 		.center {
 			margin:0px auto;
 			text-align:center;
@@ -76,15 +73,6 @@
 		.left {
 			position:relative;
 			float:left;
-		}
-		.clearBoth:before, .clearBoth:after {
-			clear:both;
-			content:".";
-			display:block;
-			height:0;
-			width:0;
-			line-height:0;
-			visibility:hidden;
 		}
 		
 		/* -------------------- --------------- -------------------- */
@@ -150,16 +138,9 @@
 		#footer {
 			position:fixed;
 			bottom:0;
-			height:42px;
+			height:50px;
 			width:100%;
 			text-align:center;
-		}
-		#footerText {
-			position:absolute;
-			top:-15px;
-			left:5px;
-			font-size:25px;
-			color:rgba(255,255,255,0.8);
 		}
 		.footerButton {
 			margin:0px 10px 0px 10px;
@@ -248,70 +229,19 @@
 			padding-top:8px;
 			font-size:30px;
 		}
-
-		/* -------------------- ---------------------- -------------------- */
-		/* -------------------- Engineering Experience -------------------- */
-		/* -------------------- ---------------------- -------------------- */
-		#background1_job {
-			height:100%;
-			width:100%;
-			background:url("img/work/ASL.png") no-repeat center center;
-			background-size:contain;
-		}
-		#background2_job {
-			height:100%;
-			width:100%;
-			background:url("img/work/PTW.png") no-repeat center center;
-			background-size:contain;
-		}
-		.background {
-			margin:-10px;
-			position:absolute;
-			opacity:1;
-			cursor:pointer;
-			-webkit-transition:opacity 0.4s;
-			transition:opacity 0.4s;
-		}
-		.job {
-			padding:10px;
-			position:relative;
-			margin:30px auto;
-			width:550px;
-			height:200px;
-			background-color:none;
-			border-radius:5px;
-			cursor:pointer;
-			background:-webkit-linear-gradient(-45deg,rgba(192,192,192,0.4) 0%,rgba(95,44,130,0.8) 100%);
-			background:linear-gradient(-45deg,rgba(192,192,192,0.4) 0%,rgba(95,44,130,0.8) 100%);
-		}
-		.jobDescription {
-			position:relative;
-			margin:5px 10px;
-			opacity:0;
-			cursor:pointer;
-			-webkit-transition:opacity 0.5s;
-			transition:opacity 0.5s;
-		}
-		.job div div p, .job div p {
-			margin:5px;
-			color:white;
-		}
-		.largeText {
-			font-size:25px;
-		}
-		.mediumText {
-			font-size:21px;
-		}
-		.smallText {
-			padding-top:5px;
-			font-size:18px;
+		.input_page1 {
+			margin-bottom:80px;
+			height:500px;
+			width:800px;
+			background:-webkit-linear-gradient(90deg,rgba(255,255,255,0) 0%,rgba(166,78,116,0.5) 40%,rgba(95,44,130,1) 100%);
+			background:linear-gradient(90deg,rgba(255,255,255,0) 0%,rgba(166,78,116,0.5) 40%,rgba(95,44,130,1) 100%);
 		}
 	</style>
 </head>
 
 <body>
 	
-	<!-- <header></header> -->
+	<header></header>
 	
 	<main>
 		<div>
@@ -346,29 +276,11 @@
 							<p id="hideShowVideo_Page1" class="icon">Hide Videos</p>
 						</div>
 
-						<div class="job">
-							<div id="background1_job" class="background"></div>
-							<div class="jobDescription">
-								<p class="largeText left">Autonomous Systems Lab</p>
-								<p class="largeText right">Zurich, Switzerland</p>
-								<p class="mediumText">Research Engineer at Swiss Federal Institute of Technology</p>
-								<p class="mediumText">March 2016 to September 2016</p>
-								<p class="smallText">Developed ROS/MoveIt! integration for the YuMi ABB robot
-									in order to allow for path planning from an external system.</p>
-							</div>
+						<div class="input_page1 right">
+							<img src="img/work/ASL.png" width="400px"/>
 						</div>
-						<div class="job">
-							<div id="background2_job" class="background"></div>
-							<div class="jobDescription">
-								<p class="largeText left">Production Technology West</p>
-								<p class="largeText right">Trollhattan, Sweden</p>
-								<p class="mediumText">Research Engineer at University West (Hogskolan Vast)</p>
-								<p class="mediumText">September 2014 to March 2015</p>
-								<p class="smallText">Developed algorithms to charaterize defects within 
-									welds and automaticlly find them within image sequences. Also developed 
-									a boroscope for an IR camera to allow the camera to take images in small 
-									confined spaces.</p>
-							</div>
+						<div class="input_page1 left">
+							<img src="img/work/PTW.png" width="300px"/>
 						</div>
 					</div>
 				</div>
@@ -391,7 +303,6 @@
 				<div class="footerButton icon notActive"></div>
 				<div class="footerButton icon notActive"></div>
 				<div class="footerButton icon notActive"></div>
-				<p id="footerText">Home</p>
 			</section>
 		<div>
 	</main>
@@ -404,7 +315,6 @@
 		var totalPages = $(".footerButton").length; // indicates the amount of available pages on the webpage
 		var videoDisplayFlag_Page1 = 0; // indicates if videos should be displayed on page 1
 		var sidebarDisplayFlag = 1; // indicates if the sidebar should be displayed
-		var jobIndexAdjust = $("#contentPage1").children().length - $(".job").length; // Adjustment to job index
 
 		/* -------------------- ------------- -------------------- */
 		/* -------------------- Window Resize -------------------- */
@@ -447,14 +357,14 @@
 			var windowHeight = $(window).height();
 			if ((windowResize == 1) && (currentIndex > 0)) {
 				$("#logo").css({
-					"top":windowHeight - 42 + "px"
+					"top":windowHeight - 50 + "px"
 				});
 			} else if ((previousIndex == 0) && (pageIndex > 0)) {
 				$("#logo").css({
 					"box-shadow":"none",
 					"margin-top":"-75px",
 					"margin-left":"-50px",
-					"top":windowHeight - 42 + "px",
+					"top":windowHeight - 50 + "px",
 					"background-color":"rgba(0,0,0,0)"
 				});
 				$("#mainLogo").css({
@@ -564,19 +474,6 @@
 					
 			}
 		}
-		function displayPageName(index) {
-			var pageName;
-			if (index == 0) {
-				pageName = "Home";
-			} else if (index == 1) {
-				pageName = "Engineering Experience";
-			} else if (index == 2) {
-				pageName = "Project Experience";
-			} else if (index == 3) {
-				pageName = "Contact Me";
-			}
-			$("#footerText").text(pageName);
-		}
 
 		/* -------------------- --------------- -------------------- */
 		/* -------------------- Click Functions -------------------- */
@@ -608,8 +505,6 @@
 				sidebarDisplayFlag = displaySidebar;
 				toggleSidebarDisplay();
 			}
-
-			displayPageName(pageIndex);
 		});
 		$("#showVideo").click(function() {
 			if (videoDisplayFlag_Page1 == 0) {
@@ -623,32 +518,6 @@
 			var windowWidth = $(window).width();
 			toggleVideoDisplay(windowWidth);
 		});
-		$(".footerButton").hover(
-			function() {
-				displayPageName($(this).index());
-			}, function() {
-				displayPageName(pageIndex);
-			}
-		);
-		$(".job").hover(
-			function() {
-				var jobIndex = $(this).index() - jobIndexAdjust;
-				$(".background").eq(jobIndex).css({
-					"opacity":"0.2"
-				});
-				$(".jobDescription").eq(jobIndex).css({
-					"opacity":"1"
-				});
-			}, function() {
-				var jobIndex = $(this).index() - jobIndexAdjust;
-				$(".background").eq(jobIndex).css({
-					"opacity":""
-				});
-				$(".jobDescription").eq(jobIndex).css({
-					"opacity":""
-				});
-			}
-		);
 	</script>
 	
 </body>
