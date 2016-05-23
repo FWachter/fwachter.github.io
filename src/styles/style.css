@@ -1,0 +1,301 @@
+/*
+PROGRAMMER: Frederick Wachter
+DATE CREATED: 2016-04-13
+LAST MODIFIED: 2016-05-16
+PURPOSE: Engineering Portfolio of Frederick Wachter
+CONTACT INFO: wachterfreddy@gmail.com
+*/
+
+/* -------------------- ----- -------------------- */
+/* -------------------- Fonts -------------------- */
+/* -------------------- ----- -------------------- */
+@font-face {
+	font-family:SlimJoe;
+	src: url("font/Slim_Joe.otf") format("opentype");
+}
+@font-face {
+	font-family:HelveticaNeue-Thin;
+	src: url("font/HelveticaNeue-Thin.otf") format("opentype");
+}
+@font-face {
+	font-family:HelveticaNeue-Light;
+	src: url("font/HelveticaNeue-Light.otf") format("opentype");
+}
+
+/* -------------------- --------- -------------------- */
+/* -------------------- Reset CSS -------------------- */
+/* -------------------- --------- -------------------- */
+html {
+	background-color:#0A0A0A;
+}
+body, main, div {
+	cursor:auto;
+}
+html, body, main {
+	height:100%;
+	width:100%;
+	overflow:hidden;
+}
+html, body, main, div, section, img, h1 {
+	z-index:0;
+	font-family:HelveticaNeue-Thin, Helvetica, Arial;
+}
+html, body, main, div, section, img, h1, iframe {
+	margin:0;
+	padding:0;
+}
+section {
+	width:100%;
+}
+h1 {
+	font-size:30px;
+}
+.icon:hover {
+	opacity:0.8;
+	cursor:pointer;
+}
+.pointer:hover {
+	cursor:pointer;
+}
+.center {
+	margin:0px auto;
+	text-align:center;
+	max-width:1000px;
+}
+.right {
+	position:relative;
+	float:right;
+}
+.left {
+	position:relative;
+	float:left;
+}
+.clearBoth:before, .clearBoth:after {
+	clear:both;
+	content:".";
+	display:block;
+	height:0;
+	width:0;
+	line-height:0;
+	visibility:hidden;
+}
+
+/* -------------------- --------------- -------------------- */
+/* -------------------- Sidebar Seciton -------------------- */
+/* -------------------- --------------- -------------------- */
+#sidebar {
+	position:fixed;
+	top:200px;
+	right:0;
+	height:172px;
+	width:64px;
+	border-radius:5px 0px 0px 5px;
+	background-color:black;
+	z-index:2;
+	-webkit-transition:right 1s;
+	transition:right 1s;
+}
+.sidebarIcon {
+	margin:7px 7px 0px 7px;
+	width:50px;
+}
+		
+/* -------------------- ------------- -------------------- */
+/* -------------------- Intro Seciton -------------------- */
+/* -------------------- ------------- -------------------- */
+#intro {
+	position:fixed;
+	background:#0A0A0A url("img/Drexel_MainBuilding.png") no-repeat center center;
+	background-size:cover;
+}
+#logo {
+	position:absolute;
+	margin:-73.5px 0 0 -125px;
+	top:0px;
+	left:0px;
+	background-color:rgba(0,0,0,0.88);
+	-webkit-box-shadow:0px 0px 55px 40px rgba(0,0,0,0.88);
+	-moz-box-shadow:0px 0px 55px 40px rgba(0,0,0,0.88);
+	-o-box-shadow:0px 0px 55px 40px rgba(0,0,0,0.88);
+	box-shadow:0px 0px 55px 40px rgba(0,0,0,0.88);
+	-webkit-transition:top 1.5s, box-shadow 1.5s, background-color 1.5s, margin 1.5s;
+	transition:top 1.5s, box-shadow 1.5s, background-color 1.5s, margin 1.5s;
+}
+#mainLogo {
+	width:250px;
+	-webkit-transition:width 1.5s;
+	transition:width 1.5s;
+}
+#introText {
+	position:fixed;
+	margin:110px 0 0 -187px;
+	top:50%;
+	left:50%;
+	font-size:50px;
+	color:white;
+	-webkit-transition:opacity 1s;
+	transition:opacity 1s;
+}
+
+/* -------------------- -------------- -------------------- */
+/* -------------------- Footer Seciton -------------------- */
+/* -------------------- -------------- -------------------- */
+#footer {
+	position:fixed;
+	bottom:0;
+	height:42px;
+	width:100%;
+	text-align:center;
+}
+#footerText {
+	position:absolute;
+	top:-15px;
+	left:5px;
+	font-size:25px;
+	color:rgba(255,255,255,0.8);
+}
+.footerButton {
+	margin:0px 10px 0px 10px;
+	display:inline-block;
+}
+.active {
+	background-color:black;
+	height:20px;
+	width:20px;
+	border:2px solid white;
+	border-radius:12px;
+	-webkit-transition:background-color 1.5s;
+	transition:background-color 1.5s;
+}
+.notActive {
+	background-color:white;
+	height:24px;
+	width:24px;
+	border-radius:12px;
+	-webkit-transition:background-color 1.5s;
+	transition:background-color 1.5s;
+}
+
+/* -------------------- ----- -------------------- */
+/* -------------------- Pages -------------------- */
+/* -------------------- ----- -------------------- */
+#page1 {
+	background:#0A0A0A url("img/ETH_ASL.jpg") no-repeat center center;
+	background-size:cover;
+}
+#page2 {
+	background:#0A0A0A url("img/DrexelHyperloop.jpg") no-repeat center center;
+	background-size:cover;
+}
+#page3 {
+	background:#0A0A0A url("img/DrexelHyperloopExpo.png") no-repeat center center;
+	background-size:cover;
+}
+#tint1 {
+	height:100%;
+	width:100%;
+	background:-webkit-linear-gradient(141deg,rgba(15,184,173,0.8) 0%,rgba(31,200,219,0.8) 51%,rgba(44,181,232,0.8) 75%);
+	background:linear-gradient(141deg,rgba(15,184,173,0.8) 0%,rgba(31,200,219,0.8) 51%,rgba(44,181,232,0.8) 75%);
+}
+#tint2 {
+	height:100%;
+	width:100%;
+	background:-webkit-linear-gradient(141deg,rgba(44,181,232,0.8),rgba(95,44,130,0.8));
+	background:linear-gradient(141deg,rgba(44,181,232,0.8),rgba(95,44,130,0.8));
+}
+#tint3 {
+	height:100%;
+	width:100%;
+	background:-webkit-linear-gradient(141deg,rgba(95,44,130,0.8),rgba(236,111,102,0.8));
+	background:linear-gradient(141deg,rgba(95,44,130,0.8),rgba(236,111,102,0.8));
+}
+#contentPage1 {
+	position:relative;
+	top:0;
+	-webkit-transition:top 1s;
+	transition:top 1s;
+}
+.page {
+	position:absolute;
+	top:0;
+	text-align:center;
+	-webkit-transition:left 1.5s;
+	transition:left 1.5s;
+}
+.video {
+	position:relative;
+	float:left;
+		width:50%;
+		max-width:500px;
+}
+#showVideo {
+	position:relative;
+	height:50px;
+	width:100%;
+	color:black;
+	background:-webkit-linear-gradient(141deg,rgba(125,125,125,0.9) 0%,rgba(150,150,150,0.9) 51%,rgba(225,225,225,0.9) 100%);
+	background:linear-gradient(141deg,rgba(125,125,125,0.9) 0%,rgba(150,150,150,0.9) 51%,rgba(225,225,225,0.9) 100%);
+}
+#showVideo p {
+	margin-top:0px;
+	padding-top:8px;
+	font-size:30px;
+}
+
+/* -------------------- ---------------------- -------------------- */
+/* -------------------- Engineering Experience -------------------- */
+/* -------------------- ---------------------- -------------------- */
+#background1_job {
+	height:100%;
+	width:100%;
+	background:url("img/work/ASL.png") no-repeat center center;
+	background-size:contain;
+}
+#background2_job {
+	height:100%;
+	width:100%;
+	background:url("img/work/PTW.png") no-repeat center center;
+	background-size:contain;
+}
+.background {
+	margin:-10px;
+	position:absolute;
+	opacity:1;
+	cursor:pointer;
+	-webkit-transition:opacity 0.4s;
+	transition:opacity 0.4s;
+}
+.job {
+	padding:10px;
+	position:relative;
+	margin:30px auto;
+	width:550px;
+	height:200px;
+	background-color:none;
+	border-radius:5px;
+	cursor:pointer;
+	background:-webkit-linear-gradient(-45deg,rgba(192,192,192,0.4) 0%,rgba(95,44,130,0.8) 100%);
+	background:linear-gradient(-45deg,rgba(192,192,192,0.4) 0%,rgba(95,44,130,0.8) 100%);
+}
+.jobDescription {
+	position:relative;
+	margin:5px 10px;
+	opacity:0;
+	cursor:pointer;
+	-webkit-transition:opacity 0.5s;
+	transition:opacity 0.5s;
+}
+.job div div p, .job div p {
+	margin:5px;
+	color:white;
+}
+.largeText {
+	font-size:25px;
+}
+.mediumText {
+	font-size:21px;
+}
+.smallText {
+	padding-top:5px;
+	font-size:18px;
+}
