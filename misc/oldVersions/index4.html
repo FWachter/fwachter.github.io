@@ -1,0 +1,654 @@
+<!DOCTYPE HTML>
+
+<head>
+	<title>Frederick Wachter Engineering Portfolio</title>
+	<link rel="shorcut icon" href="img/Logo_Small.png"/>
+	<!--<link rel="stylesheet" type="text/css" href="index.css"/>-->
+	
+	<meta name="description" content="Official website for the portfolio of  Frederick Wachter"/>
+	<meta name="keywords" content="Frederick Wachter, Drexel University, Drexel Engineering"/>
+	<meta name="author" content="Frederick Wachter"/>
+	<!--<meta name="google-site-verification" content=""/>-->
+	
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+	
+	<style>
+		/* -------------------- ----- -------------------- */
+		/* -------------------- Fonts -------------------- */
+		/* -------------------- ----- -------------------- */
+		@font-face {
+			font-family:SlimJoe;
+			src: url("font/Slim_Joe.otf") format("opentype");
+		}
+		@font-face {
+			font-family:HelveticaNeue-Thin;
+			src: url("font/HelveticaNeue-Thin.otf") format("opentype");
+		}
+		@font-face {
+			font-family:HelveticaNeue-Light;
+			src: url("font/HelveticaNeue-Light.otf") format("opentype");
+		}
+		
+		/* -------------------- --------- -------------------- */
+		/* -------------------- Reset CSS -------------------- */
+		/* -------------------- --------- -------------------- */
+		html {
+			background-color:#0A0A0A;
+		}
+		body, main, div {
+			cursor:auto;
+		}
+		html, body, main {
+			height:100%;
+			width:100%;
+			overflow:hidden;
+		}
+		html, body, main, div, section, img, h1 {
+			z-index:0;
+			font-family:HelveticaNeue-Thin, Helvetica, Arial;
+		}
+		html, body, main, div, section, img, h1, iframe {
+			margin:0;
+			padding:0;
+		}
+		section {
+			width:100%;
+		}
+		h1 {
+			font-size:30px;
+		}
+		.icon:hover {
+			opacity:0.8;
+			cursor:pointer;
+		}
+		.pointer:hover {
+			cursor:pointer;
+		}
+		.center {
+			margin:0px auto;
+			text-align:center;
+			max-width:1000px;
+		}
+		.right {
+			position:relative;
+			float:right;
+		}
+		.left {
+			position:relative;
+			float:left;
+		}
+		.clearBoth:before, .clearBoth:after {
+			clear:both;
+			content:".";
+			display:block;
+			height:0;
+			width:0;
+			line-height:0;
+			visibility:hidden;
+		}
+		
+		/* -------------------- --------------- -------------------- */
+		/* -------------------- Sidebar Seciton -------------------- */
+		/* -------------------- --------------- -------------------- */
+		#sidebar {
+			position:fixed;
+			top:200px;
+			right:0;
+			height:172px;
+			width:64px;
+			border-radius:5px 0px 0px 5px;
+			background-color:black;
+			z-index:2;
+			-webkit-transition:right 1s;
+			transition:right 1s;
+		}
+		.sidebarIcon {
+			margin:7px 7px 0px 7px;
+			width:50px;
+		}
+				
+		/* -------------------- ------------- -------------------- */
+		/* -------------------- Intro Seciton -------------------- */
+		/* -------------------- ------------- -------------------- */
+		#intro {
+			position:fixed;
+			background:#0A0A0A url("img/Drexel_MainBuilding.png") no-repeat center center;
+			background-size:cover;
+		}
+		#logo {
+			position:absolute;
+			margin:-73.5px 0 0 -125px;
+			top:0px;
+			left:0px;
+			background-color:rgba(0,0,0,0.88);
+			-webkit-box-shadow:0px 0px 55px 40px rgba(0,0,0,0.88);
+			-moz-box-shadow:0px 0px 55px 40px rgba(0,0,0,0.88);
+			-o-box-shadow:0px 0px 55px 40px rgba(0,0,0,0.88);
+			box-shadow:0px 0px 55px 40px rgba(0,0,0,0.88);
+			-webkit-transition:top 1.5s, box-shadow 1.5s, background-color 1.5s, margin 1.5s;
+			transition:top 1.5s, box-shadow 1.5s, background-color 1.5s, margin 1.5s;
+		}
+		#mainLogo {
+			width:250px;
+			-webkit-transition:width 1.5s;
+			transition:width 1.5s;
+		}
+		#introText {
+			position:fixed;
+			margin:110px 0 0 -187px;
+			top:50%;
+			left:50%;
+			font-size:50px;
+			color:white;
+			-webkit-transition:opacity 1s;
+			transition:opacity 1s;
+		}
+		
+		/* -------------------- -------------- -------------------- */
+		/* -------------------- Footer Seciton -------------------- */
+		/* -------------------- -------------- -------------------- */
+		#footer {
+			position:fixed;
+			bottom:0;
+			height:42px;
+			width:100%;
+			text-align:center;
+		}
+		#footerText {
+			position:absolute;
+			top:-15px;
+			left:5px;
+			font-size:25px;
+			color:rgba(255,255,255,0.8);
+		}
+		.footerButton {
+			margin:0px 10px 0px 10px;
+			display:inline-block;
+		}
+		.active {
+			background-color:black;
+			height:20px;
+			width:20px;
+			border:2px solid white;
+			border-radius:12px;
+			-webkit-transition:background-color 1.5s;
+			transition:background-color 1.5s;
+		}
+		.notActive {
+			background-color:white;
+			height:24px;
+			width:24px;
+			border-radius:12px;
+			-webkit-transition:background-color 1.5s;
+			transition:background-color 1.5s;
+		}
+
+		/* -------------------- ----- -------------------- */
+		/* -------------------- Pages -------------------- */
+		/* -------------------- ----- -------------------- */
+		#page1 {
+			background:#0A0A0A url("img/ETH_ASL.jpg") no-repeat center center;
+			background-size:cover;
+		}
+		#page2 {
+			background:#0A0A0A url("img/DrexelHyperloop.jpg") no-repeat center center;
+			background-size:cover;
+		}
+		#page3 {
+			background:#0A0A0A url("img/DrexelHyperloopExpo.png") no-repeat center center;
+			background-size:cover;
+		}
+		#tint1 {
+			height:100%;
+			width:100%;
+			background:-webkit-linear-gradient(141deg,rgba(15,184,173,0.8) 0%,rgba(31,200,219,0.8) 51%,rgba(44,181,232,0.8) 75%);
+			background:linear-gradient(141deg,rgba(15,184,173,0.8) 0%,rgba(31,200,219,0.8) 51%,rgba(44,181,232,0.8) 75%);
+		}
+		#tint2 {
+			height:100%;
+			width:100%;
+			background:-webkit-linear-gradient(141deg,rgba(44,181,232,0.8),rgba(95,44,130,0.8));
+			background:linear-gradient(141deg,rgba(44,181,232,0.8),rgba(95,44,130,0.8));
+		}
+		#tint3 {
+			height:100%;
+			width:100%;
+			background:-webkit-linear-gradient(141deg,rgba(95,44,130,0.8),rgba(236,111,102,0.8));
+			background:linear-gradient(141deg,rgba(95,44,130,0.8),rgba(236,111,102,0.8));
+		}
+		#contentPage1 {
+			position:relative;
+			top:0;
+			-webkit-transition:top 1s;
+			transition:top 1s;
+		}
+		.page {
+			position:absolute;
+			top:0;
+			text-align:center;
+			-webkit-transition:left 1.5s;
+			transition:left 1.5s;
+		}
+		.video {
+			position:relative;
+			float:left;
+ 			width:50%;
+ 			max-width:500px;
+		}
+		#showVideo {
+			position:relative;
+			height:50px;
+			width:100%;
+			color:black;
+			background:-webkit-linear-gradient(141deg,rgba(125,125,125,0.9) 0%,rgba(150,150,150,0.9) 51%,rgba(225,225,225,0.9) 100%);
+			background:linear-gradient(141deg,rgba(125,125,125,0.9) 0%,rgba(150,150,150,0.9) 51%,rgba(225,225,225,0.9) 100%);
+		}
+		#showVideo p {
+			margin-top:0px;
+			padding-top:8px;
+			font-size:30px;
+		}
+
+		/* -------------------- ---------------------- -------------------- */
+		/* -------------------- Engineering Experience -------------------- */
+		/* -------------------- ---------------------- -------------------- */
+		#background1_job {
+			height:100%;
+			width:100%;
+			background:url("img/work/ASL.png") no-repeat center center;
+			background-size:contain;
+		}
+		#background2_job {
+			height:100%;
+			width:100%;
+			background:url("img/work/PTW.png") no-repeat center center;
+			background-size:contain;
+		}
+		.background {
+			margin:-10px;
+			position:absolute;
+			opacity:1;
+			cursor:pointer;
+			-webkit-transition:opacity 0.4s;
+			transition:opacity 0.4s;
+		}
+		.job {
+			padding:10px;
+			position:relative;
+			margin:30px auto;
+			width:550px;
+			height:200px;
+			background-color:none;
+			border-radius:5px;
+			cursor:pointer;
+			background:-webkit-linear-gradient(-45deg,rgba(192,192,192,0.4) 0%,rgba(95,44,130,0.8) 100%);
+			background:linear-gradient(-45deg,rgba(192,192,192,0.4) 0%,rgba(95,44,130,0.8) 100%);
+		}
+		.jobDescription {
+			position:relative;
+			margin:5px 10px;
+			opacity:0;
+			cursor:pointer;
+			-webkit-transition:opacity 0.5s;
+			transition:opacity 0.5s;
+		}
+		.job div div p, .job div p {
+			margin:5px;
+			color:white;
+		}
+		.largeText {
+			font-size:25px;
+		}
+		.mediumText {
+			font-size:21px;
+		}
+		.smallText {
+			padding-top:5px;
+			font-size:18px;
+		}
+	</style>
+</head>
+
+<body>
+	
+	<!-- <header></header> -->
+	
+	<main>
+		<div>
+			<!--=============== ======= ===============-->
+			<!--=============== Sidebar ===============-->
+			<!--=============== ======= ===============-->
+			<section id="sidebar">
+				<a href="https://www.facebook.com/freddy.wachter" target="_blank">	
+					<img class="sidebarIcon icon" src="img/icons/Facebook.png"/>
+				</a>
+				<a href="https://www.youtube.com/channel/UCgnxbWOmcXFhQtGtEecXSpg" target="_blank">
+					<img class="sidebarIcon icon" src="img/icons/YouTube.png"/>
+				</a>
+				<a href="https://www.linkedin.com/in/frederickwachter" target="_blank">
+					<img class="sidebarIcon icon" src="img/icons/LinkedIn.png"/>
+				</a>
+			</section>
+			
+			<!--=============== ===== ===============-->
+			<!--=============== Pages ===============-->
+			<!--=============== ===== ===============-->
+			<section id="intro" class="page">
+				<p id="introText">Frederick Wachter</p>
+			</section>
+			<section id="page1" class="page">
+				<div id="tint1">
+					<div id="contentPage1" class="center">
+						<iframe class="video" src="https://www.youtube.com/embed/xV6nHvwKfFg" frameborder="0" allowfullscreen></iframe>
+						<iframe class="video" src="https://www.youtube.com/embed/2KfogkkdEoY" frameborder="0" allowfullscreen></iframe>
+						<div id="videoSpacer"></div>
+						<div id="showVideo">
+							<p id="hideShowVideo_Page1" class="icon">Hide Videos</p>
+						</div>
+
+						<div class="job">
+							<div id="background1_job" class="background"></div>
+							<div class="jobDescription">
+								<p class="largeText left">Autonomous Systems Lab</p>
+								<p class="largeText right">Zurich, Switzerland</p>
+								<p class="mediumText">Research Engineer at Swiss Federal Institute of Technology</p>
+								<p class="mediumText">March 2016 to September 2016</p>
+								<p class="smallText">Developed ROS/MoveIt! integration for the YuMi ABB robot
+									in order to allow for path planning from an external system.</p>
+							</div>
+						</div>
+						<div class="job">
+							<div id="background2_job" class="background"></div>
+							<div class="jobDescription">
+								<p class="largeText left">Production Technology West</p>
+								<p class="largeText right">Trollhattan, Sweden</p>
+								<p class="mediumText">Research Engineer at University West (Hogskolan Vast)</p>
+								<p class="mediumText">September 2014 to March 2015</p>
+								<p class="smallText">Developed algorithms to charaterize defects within 
+									welds and automaticlly find them within image sequences. Also developed 
+									a boroscope for an IR camera to allow the camera to take images in small 
+									confined spaces.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section id="page2" class="page">
+				<div id="tint3">
+				</div>
+			</section>
+			<section id="page3" class="page">
+			</section>
+			
+			<!--=============== ====== ===============-->
+			<!--=============== Footer ===============-->
+			<!--=============== ====== ===============-->
+			<div id="logo">
+				<img id="mainLogo" src="img/Logo_Large.png"/>
+			</div>
+			<section id="footer">
+				<div class="footerButton active"></div>
+				<div class="footerButton icon notActive"></div>
+				<div class="footerButton icon notActive"></div>
+				<div class="footerButton icon notActive"></div>
+				<p id="footerText">Home</p>
+			</section>
+		<div>
+	</main>
+	
+	<script>
+		/* -------------------- --------- -------------------- */
+		/* -------------------- Variables -------------------- */
+		/* -------------------- --------- -------------------- */
+		var pageIndex = 0; // indicated the current page of the user
+		var totalPages = $(".footerButton").length; // indicates the amount of available pages on the webpage
+		var videoDisplayFlag_Page1 = 0; // indicates if videos should be displayed on page 1
+		var sidebarDisplayFlag = 1; // indicates if the sidebar should be displayed
+		var jobIndexAdjust = $("#contentPage1").children().length - $(".job").length; // Adjustment to job index
+
+		/* -------------------- ------------- -------------------- */
+		/* -------------------- Window Resize -------------------- */
+		/* -------------------- ------------- -------------------- */
+		windowResize();
+		$(window).resize(function() {windowResize();});
+		function windowResize() {
+			var windowWidth = $(window).width();
+			var windowHeight = $(window).height();
+			$("#intro").css({
+				"height":windowHeight + "px"
+			});
+			$(".page").css({
+				"width":windowWidth + "px",
+				"height":windowHeight + "px"
+			});
+			$("#logo").css({
+				"top":(windowHeight / 2) + "px",
+				"left":(windowWidth / 2) + "px" 
+			});
+
+			offsetPages(pageIndex,windowWidth);
+			setIconLocation(null,pageIndex,1);
+			adjustVideoSize_Page1(windowWidth);
+			toggleVideoDisplay(windowWidth);
+		}
+
+		/* -------------------- -------- -------------------- */
+		/* -------------------- Function -------------------- */
+		/* -------------------- -------- -------------------- */
+		function offsetPages(index,windowWidth) {
+			var offset = (-index) * windowWidth;
+			for (var i = 0; i < totalPages; i++) {
+				$(".page").eq(i).css({
+					"left":offset + (windowWidth * i) + "px"
+				});
+			}
+		}
+		function setIconLocation(previousIndex,currentIndex,windowResize) {
+			var windowHeight = $(window).height();
+			if ((windowResize == 1) && (currentIndex > 0)) {
+				$("#logo").css({
+					"top":windowHeight - 42 + "px"
+				});
+			} else if ((previousIndex == 0) && (pageIndex > 0)) {
+				$("#logo").css({
+					"box-shadow":"none",
+					"margin-top":"-75px",
+					"margin-left":"-50px",
+					"top":windowHeight - 42 + "px",
+					"background-color":"rgba(0,0,0,0)"
+				});
+				$("#mainLogo").css({
+					"width":"100px"
+				});
+			} else if ((previousIndex > 0) && (pageIndex == 0)) {
+				$("#logo").css({
+					"top":(windowHeight / 2) + "px",
+					"box-shadow":"",
+					"margin-top":"",
+					"margin-left":"",
+					"background-color":""
+				});
+				$("#mainLogo").css({
+					"width":""
+				});
+			}
+		}
+		function toggleActivePage(previousIndex,currentIndex) {
+			$(".footerButton").eq(previousIndex).removeClass("active");
+			$(".footerButton").eq(previousIndex).addClass("notActive");
+			$(".footerButton").eq(previousIndex).addClass("icon");
+
+			$(".footerButton").eq(currentIndex).addClass("active");
+			$(".footerButton").eq(currentIndex).removeClass("notActive");
+			$(".footerButton").eq(currentIndex).removeClass("icon");
+
+			setIconLocation(previousIndex,currentIndex,0);
+		}
+		function adjustVideoSize_Page1(windowWidth) {
+			if (windowWidth <= 1000) {
+				$(".video").css({
+					"height":((windowWidth / 2) / 1.333) + "px"
+				});
+				$("#videoSpacer").css({
+					"height":((windowWidth / 2) / 1.333) + "px"
+				});
+				$("#showVideo").css({
+					"border-radius":"0px"
+				});
+			} else {
+				$(".video").css({
+					"height":"375px"
+				});
+				$("#videoSpacer").css({
+					"height":"375px"
+				});
+				$("#showVideo").css({
+					"border-radius":"0px 0px 5px 5px"
+				});
+			}
+		}
+		function toggleVideoDisplay(windowWidth) {
+			var previousSidebarDisplayFlag = sidebarDisplayFlag;
+			if (videoDisplayFlag_Page1 == 0) {
+				var topAdjustment = 0;
+				if (windowWidth < 1000) {
+					topAdjustment = ((-windowWidth / 2) / 1.333);
+				} else if (windowWidth >= 1000) {
+					topAdjustment = -375;
+				}
+				$("#contentPage1").css({
+					"top":topAdjustment + "px"
+				});
+				$("#hideShowVideo_Page1").text("Show Videos");
+				sidebarDisplayFlag = 1;
+			} else if (videoDisplayFlag_Page1 == 1) {
+				if (windowWidth < 1000) {
+					sidebarDisplayFlag = 0;
+				} else if (windowWidth >= 1000) {
+					sidebarDisplayFlag = 1;
+				}
+				$("#contentPage1").css({
+					"top":""
+				});
+				$("#hideShowVideo_Page1").text("Hide Videos");
+			}
+
+			sidebarDisplayFlag = pageFlagReset(sidebarDisplayFlag);
+			if (previousSidebarDisplayFlag != sidebarDisplayFlag) {
+				toggleSidebarDisplay();
+			}
+		}
+		function toggleSidebarDisplay() {
+			if (sidebarDisplayFlag == 0) {
+				$("#sidebar").css({
+					"right":"-64px"
+				});
+			} else if (sidebarDisplayFlag == 1) {
+				$("#sidebar").css({
+					"right":""
+				});
+			} else {
+				alert("Error (3): Flag was set to incorrect value.");
+			}
+		}
+		function pageFlagReset(sidebarDisplayFlag) {
+			if (pageIndex != 1) {
+				return 1;
+			} else {
+				var windowWidth = $(window).width();
+				if ((windowWidth <= 1000) && (videoDisplayFlag_Page1 == 1)) {
+					return 0;
+				} else {
+					return 1;
+				}
+					
+			}
+		}
+		function displayPageName(index) {
+			var pageName;
+			if (index == 0) {
+				pageName = "Home";
+			} else if (index == 1) {
+				pageName = "Engineering Experience";
+			} else if (index == 2) {
+				pageName = "Project Experience";
+			} else if (index == 3) {
+				pageName = "Contact Me";
+			}
+			$("#footerText").text(pageName);
+		}
+
+		/* -------------------- --------------- -------------------- */
+		/* -------------------- Click Functions -------------------- */
+		/* -------------------- --------------- -------------------- */
+		$(".footerButton").click(function() {
+			var windowWidth = $(window).width();
+			var previousIndex = pageIndex;
+			pageIndex = $(this).index();
+
+			if (previousIndex != pageIndex) {
+				offsetPages(pageIndex,windowWidth);
+				toggleActivePage(previousIndex,pageIndex);
+
+				if (pageIndex != 0) {
+					$("#introText").css({
+						"opacity":"0"
+					});
+				} else if (pageIndex == 0) {
+					$("#introText").css({
+						"opacity":"1"
+					});
+				} else {
+					alert("Error (1): Current page index is incorrect.");
+				}
+			}
+
+			displaySidebar = pageFlagReset(sidebarDisplayFlag);
+			if (displaySidebar != sidebarDisplayFlag) {
+				sidebarDisplayFlag = displaySidebar;
+				toggleSidebarDisplay();
+			}
+
+			displayPageName(pageIndex);
+		});
+		$("#showVideo").click(function() {
+			if (videoDisplayFlag_Page1 == 0) {
+				videoDisplayFlag_Page1 = 1;
+			} else if (videoDisplayFlag_Page1 == 1) {
+				videoDisplayFlag_Page1 = 0;
+			} else {
+				alert("Error (2): Flag was set to incorrect value.");
+			}
+
+			var windowWidth = $(window).width();
+			toggleVideoDisplay(windowWidth);
+		});
+		$(".footerButton").hover(
+			function() {
+				displayPageName($(this).index());
+			}, function() {
+				displayPageName(pageIndex);
+			}
+		);
+		$(".job").hover(
+			function() {
+				var jobIndex = $(this).index() - jobIndexAdjust;
+				$(".background").eq(jobIndex).css({
+					"opacity":"0.2"
+				});
+				$(".jobDescription").eq(jobIndex).css({
+					"opacity":"1"
+				});
+			}, function() {
+				var jobIndex = $(this).index() - jobIndexAdjust;
+				$(".background").eq(jobIndex).css({
+					"opacity":""
+				});
+				$(".jobDescription").eq(jobIndex).css({
+					"opacity":""
+				});
+			}
+		);
+	</script>
+	
+</body>
