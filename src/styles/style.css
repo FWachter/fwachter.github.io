@@ -1,7 +1,7 @@
 /*
 PROGRAMMER: Frederick Wachter
 DATE CREATED: 2016-04-13
-LAST MODIFIED: 2016-05-16
+LAST MODIFIED: 2016-05-30
 PURPOSE: Engineering Portfolio of Frederick Wachter
 CONTACT INFO: wachterfreddy@gmail.com
 */
@@ -28,6 +28,11 @@ CONTACT INFO: wachterfreddy@gmail.com
 html {
 	background-color:#0A0A0A;
 }
+body {
+	max-width:100%;
+	min-width:980px;
+	margin:0px auto;
+}
 body, main, div {
 	cursor:auto;
 }
@@ -40,7 +45,7 @@ html, body, main, div, section, img, h1 {
 	z-index:0;
 	font-family:HelveticaNeue-Thin, Helvetica, Arial;
 }
-html, body, main, div, section, img, h1, iframe {
+html, body, main, div, section, img, h1, iframe, hr {
 	margin:0;
 	padding:0;
 }
@@ -154,6 +159,13 @@ h1 {
 	font-size:25px;
 	color:rgba(255,255,255,0.8);
 }
+#lastModified {
+	position:absolute;
+	top:5px;
+	right:5px;
+	font-size:15px;
+	color:rgba(255,255,255,0.8);
+}
 .footerButton {
 	margin:0px 10px 0px 10px;
 	display:inline-block;
@@ -194,8 +206,8 @@ h1 {
 #tint1 {
 	height:100%;
 	width:100%;
-	background:-webkit-linear-gradient(141deg,rgba(15,184,173,0.8) 0%,rgba(31,200,219,0.8) 51%,rgba(44,181,232,0.8) 75%);
-	background:linear-gradient(141deg,rgba(15,184,173,0.8) 0%,rgba(31,200,219,0.8) 51%,rgba(44,181,232,0.8) 75%);
+	background:-webkit-linear-gradient(141deg,rgba(7,90,85,0.8) 0%,rgba(12,105,121,0.8) 51%,rgba(17,119,157,0.8) 75%);
+	background:linear-gradient(141deg,rgba(7,90,85,0.8) 0%,rgba(12,105,121,0.8) 51%,rgba(17,119,157,0.8) 75%);
 }
 #tint2 {
 	height:100%;
@@ -233,11 +245,13 @@ h1 {
 	height:50px;
 	width:100%;
 	color:black;
-	background:-webkit-linear-gradient(141deg,rgba(125,125,125,0.9) 0%,rgba(150,150,150,0.9) 51%,rgba(225,225,225,0.9) 100%);
-	background:linear-gradient(141deg,rgba(125,125,125,0.9) 0%,rgba(150,150,150,0.9) 51%,rgba(225,225,225,0.9) 100%);
+	background:rgba(194,194,194,0.8);
+	box-shadow: 0 4px 5px -2px black;
+	/*background:-webkit-linear-gradient(141deg,rgba(125,125,125,0.9) 0%,rgba(150,150,150,0.9) 51%,rgba(225,225,225,0.9) 100%);
+	background:linear-gradient(141deg,rgba(125,125,125,0.9) 0%,rgba(150,150,150,0.9) 51%,rgba(225,225,225,0.9) 100%);*/
 }
 #showVideo p {
-	margin-top:0px;
+	margin:0px;
 	padding-top:8px;
 	font-size:30px;
 }
@@ -258,26 +272,42 @@ h1 {
 	background-size:contain;
 }
 .background {
-	margin:-10px;
+	/*margin:-10px;
 	position:absolute;
 	opacity:1;
-	cursor:pointer;
+	cursor:pointer;*/
 	-webkit-transition:opacity 0.4s;
 	transition:opacity 0.4s;
 }
 .job {
-	padding:10px;
+	/*padding:10px;*/
 	position:relative;
 	margin:30px auto;
 	width:550px;
-	height:200px;
-	background-color:none;
-	border-radius:5px;
+	height:250px;
 	cursor:pointer;
-	background:-webkit-linear-gradient(-45deg,rgba(192,192,192,0.4) 0%,rgba(95,44,130,0.8) 100%);
-	background:linear-gradient(-45deg,rgba(192,192,192,0.4) 0%,rgba(95,44,130,0.8) 100%);
+	background-color:rgba(25,25,25,0.95);
+	/*border:1px solid rgba(7,90,85,0.6);*/
+}
+.jobImage {
+	top:2px;
+	position:relative;
+	height:200px;
+	width:546px;
+	margin:0px 2px;
+	background-color:rgba(194,194,194,0.8);
+}
+.job:hover {
+	background-color:rgba(25,25,25,0.8);
+}
+.job:hover .jobImage {
+	background-color:rgba(194,194,194,0.1);
+}
+.job:hover .jobTitle {
+	color:rgba(194,194,194,0.1);
 }
 .jobDescription {
+	top:-270px;
 	position:relative;
 	margin:5px 10px;
 	opacity:0;
@@ -289,6 +319,12 @@ h1 {
 	margin:5px;
 	color:white;
 }
+.jobTitle {
+	top:-16px;
+	position:relative;
+	font-size:25px;
+	color:rgba(194,194,194,0.95);
+}
 .largeText {
 	font-size:25px;
 }
@@ -299,3 +335,47 @@ h1 {
 	padding-top:5px;
 	font-size:18px;
 }
+
+/* -------------------- ------------------ -------------------- */
+/* -------------------- Project Experience -------------------- */
+/* -------------------- ------------------ -------------------- */
+.project {
+	display:inline-block;
+	position:relative;
+	margin:10px 10px;
+	height:250px;
+	width:450px;
+	background-color:none;
+	cursor:pointer;
+	background-color:rgba(25,25,25,0.95);
+}
+.project:hover {
+	background-color:rgba(25,25,25,0.8);
+}
+.project:hover .projectImage {
+	background-color:rgba(194,194,194,0.1);
+}
+.projectImage {
+	height:200px;
+	width:446px;
+	margin:2px;
+	background-color:rgba(194,194,194,0.8);
+}
+.project div p {
+	top:-16px;
+	position:relative;
+	font-size:25px;
+	color:rgba(194,194,194,0.95);
+}
+.spacer {
+	height:20px;
+	width:100%;
+}
+
+
+
+
+
+
+
+
