@@ -245,7 +245,7 @@ h1 {
 	height:50px;
 	width:100%;
 	color:black;
-	background:rgba(194,194,194,0.8);
+	background:rgba(232,232,232,0.9);
 	box-shadow: 0 4px 5px -2px black;
 	/*background:-webkit-linear-gradient(141deg,rgba(125,125,125,0.9) 0%,rgba(150,150,150,0.9) 51%,rgba(225,225,225,0.9) 100%);
 	background:linear-gradient(141deg,rgba(125,125,125,0.9) 0%,rgba(150,150,150,0.9) 51%,rgba(225,225,225,0.9) 100%);*/
@@ -286,7 +286,7 @@ h1 {
 	width:550px;
 	height:250px;
 	cursor:pointer;
-	background-color:rgba(25,25,25,0.95);
+	background:rgba(25,25,25,0.95);
 	/*border:1px solid rgba(7,90,85,0.6);*/
 }
 .jobImage {
@@ -295,16 +295,22 @@ h1 {
 	height:200px;
 	width:546px;
 	margin:0px 2px;
-	background-color:rgba(194,194,194,0.8);
+	background:rgba(232,232,232,0.9);
+}
+.jobTitle {
+	top:-16px;
+	position:relative;
+	font-size:25px;
+	color:rgba(232,232,232,0.9);
 }
 .job:hover {
-	background-color:rgba(25,25,25,0.8);
+	background:rgba(25,25,25,0.8);
 }
 .job:hover .jobImage {
-	background-color:rgba(194,194,194,0.1);
+	background:rgba(232,232,232,0.1);
 }
 .job:hover .jobTitle {
-	color:rgba(194,194,194,0.1);
+	color:rgba(232,232,232,0.1);
 }
 .jobDescription {
 	top:-270px;
@@ -318,12 +324,6 @@ h1 {
 .job div div p, .job div p {
 	margin:5px;
 	color:white;
-}
-.jobTitle {
-	top:-16px;
-	position:relative;
-	font-size:25px;
-	color:rgba(194,194,194,0.95);
 }
 .largeText {
 	font-size:25px;
@@ -347,25 +347,25 @@ h1 {
 	width:450px;
 	background-color:none;
 	cursor:pointer;
-	background-color:rgba(25,25,25,0.95);
-}
-.project:hover {
-	background-color:rgba(25,25,25,0.8);
-}
-.project:hover .projectImage {
-	background-color:rgba(194,194,194,0.1);
+	background:rgba(25,25,25,0.9);
 }
 .projectImage {
 	height:200px;
 	width:446px;
 	margin:2px;
-	background-color:rgba(194,194,194,0.8);
+	background:rgba(232,232,232,0.9);
+}
+.project:hover {
+	background:rgba(25,25,25,0.8);
+}
+.project:hover .projectImage {
+	background:rgba(232,232,232,0.1);
 }
 .project div p {
 	top:-16px;
 	position:relative;
 	font-size:25px;
-	color:rgba(194,194,194,0.95);
+	color:rgba(232,232,232,0.95);
 }
 .spacer {
 	height:20px;
