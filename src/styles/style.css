@@ -206,8 +206,8 @@ h1 {
 #tint1 {
 	height:100%;
 	width:100%;
-	background:-webkit-linear-gradient(141deg,rgba(7,90,85,0.8) 0%,rgba(12,105,121,0.8) 51%,rgba(17,119,157,0.8) 75%);
-	background:linear-gradient(141deg,rgba(7,90,85,0.8) 0%,rgba(12,105,121,0.8) 51%,rgba(17,119,157,0.8) 75%);
+	background:-webkit-linear-gradient(141deg,rgba(15,184,173,0.8) 0%,rgba(31,200,219,0.8) 51%,rgba(44,181,232,0.8) 75%);
+	background:linear-gradient(141deg,rgba(15,184,173,0.8) 0%,rgba(31,200,219,0.8) 51%,rgba(44,181,232,0.8) 75%);
 }
 #tint2 {
 	height:100%;
