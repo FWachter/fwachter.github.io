@@ -14,11 +14,13 @@ var totalPages = $(".footerButton").length; // indicates the amount of available
 var videoDisplayFlag_Page1 = 0; // indicates if videos should be displayed on page 1
 var sidebarDisplayFlag = 1; // indicates if the sidebar should be displayed
 var jobIndexAdjust = $("#contentPage1").children().length - $(".job").length; // Adjustment to job index
+var projectIndexAdjust =  $("#contentPage2").children().length - $(".project").length - 1; // Adjustment to project index
 
 /* -------------------- ------------- -------------------- */
 /* -------------------- Window Resize -------------------- */
 /* -------------------- ------------- -------------------- */
 windowResize();
+
 $(window).resize(function() {windowResize();});
 function windowResize() {
 	var windowWidth = $(window).width();
@@ -232,6 +234,10 @@ $("#showVideo").click(function() {
 	var windowWidth = $(window).width();
 	toggleVideoDisplay(windowWidth);
 });
+
+/* -------------------- --------------- -------------------- */
+/* -------------------- Hover Functions -------------------- */
+/* -------------------- --------------- -------------------- */
 $(".footerButton").hover(
 	function() {
 		displayPageName($(this).index());
@@ -258,16 +264,73 @@ $(".job").hover(
 		});
 	}
 );
+$(".project").hover(
+	function() {
+		sidebarDisplayFlag = 0;
+		toggleSidebarDisplay();
+
+		var projectIndex = $(this).index() - projectIndexAdjust;
+		$(".background").eq(projectIndex + $(".job").length).css({
+			"opacity":"0.2"
+		});
+		$(".projectDescription").eq(projectIndex).css({
+			"opacity":"1"
+		});
+	}, function() {
+		sidebarDisplayFlag = 1;
+		toggleSidebarDisplay();
+
+		var projectIndex = $(this).index() - projectIndexAdjust;
+		$(".background").eq(projectIndex + $(".job").length).css({
+			"opacity":""
+		});
+		$(".projectDescription").eq(projectIndex).css({
+			"opacity":""
+		});
+	}
+);
+
+/* -------------------- ----------------------- -------------------- */
+/* -------------------- Contact Form Submission -------------------- */
+/* -------------------- ----------------------- -------------------- */
+$("#contentPage3").submit(function(e) {
+	e.preventDefault();
+	$.ajax({
+	    url: "https://formspree.io/wachterfreddy@gmail.com", 
+	    method: "POST",
+	    data: {name: $("#userName").val(), _replyto: $("#userEmail").val(), message: $("#userMessage").val()},
+	    dataType: "json"
+	});
+
+	setTimeout(function() {
+		clearForm();
+	}, 1000);
+});
+
+function clearForm() {
+/* PROGRAMMER: Frederick Wachter
+   DATE CREATED: 2016-05-02
+   PURPOSE: Clear the form
+*/
+	var elems = document.getElementsByTagName("input");
+	var l = elems.length - 1;
+	for (var i = 0; i < l; ++i) {
+		elems[i].value = "";
+	}
+	$("textarea").val("");
+
+	alert("Contact request sent.");
+}
 
 /* -------------------- --------------- -------------------- */
 /* -------------------- Google Tracking -------------------- */
 /* -------------------- --------------- -------------------- */
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+// (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+// (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+// m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+// })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-ga('create', 'UA-69516450-2', 'auto');
-ga('send', 'pageview');
+// ga('create', 'UA-69516450-2', 'auto');
+// ga('send', 'pageview');
 
 
