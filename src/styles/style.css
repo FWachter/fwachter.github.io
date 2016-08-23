@@ -84,6 +84,17 @@ h1 {
 	line-height:0;
 	visibility:hidden;
 }
+.spacer {
+	height:20px;
+	width:100%;
+}
+.bottomSpacer {
+	height:140px;
+	width:100%;
+}
+.scroll {
+	overflow-y:scroll;
+}
 
 /* -------------------- --------------- -------------------- */
 /* -------------------- Sidebar Seciton -------------------- */
@@ -204,18 +215,21 @@ h1 {
 	background-size:cover;
 }
 #tint1 {
+	position:fixed;
 	height:100%;
 	width:100%;
 	background:-webkit-linear-gradient(141deg,rgba(15,184,173,0.8) 0%,rgba(31,200,219,0.8) 51%,rgba(44,181,232,0.8) 75%);
 	background:linear-gradient(141deg,rgba(15,184,173,0.8) 0%,rgba(31,200,219,0.8) 51%,rgba(44,181,232,0.8) 75%);
 }
 #tint2 {
+	position:fixed;
 	height:100%;
 	width:100%;
 	background:-webkit-linear-gradient(141deg,rgba(44,181,232,0.8),rgba(95,44,130,0.8));
 	background:linear-gradient(141deg,rgba(44,181,232,0.8),rgba(95,44,130,0.8));
 }
 #tint3 {
+	position:fixed;
 	height:100%;
 	width:100%;
 	background:-webkit-linear-gradient(141deg,rgba(95,44,130,0.8),rgba(236,111,102,0.8));
@@ -259,13 +273,13 @@ h1 {
 /* -------------------- ---------------------- -------------------- */
 /* -------------------- Engineering Experience -------------------- */
 /* -------------------- ---------------------- -------------------- */
-#background1_job {
+#job_background_ASL {
 	height:100%;
 	width:100%;
 	background:url("img/work/ASL.png") no-repeat center center;
 	background-size:contain;
 }
-#background2_job {
+#job_background_PTW {
 	height:100%;
 	width:100%;
 	background:url("img/work/PTW.png") no-repeat center center;
@@ -313,8 +327,8 @@ h1 {
 	color:rgba(232,232,232,0.1);
 }
 .jobDescription {
-	top:-270px;
-	position:relative;
+	top:0px;
+	position:absolute;
 	margin:5px 10px;
 	opacity:0;
 	cursor:pointer;
@@ -325,13 +339,13 @@ h1 {
 	margin:5px;
 	color:white;
 }
-.largeText {
-	font-size:25px;
+.jobDescription .largeText {
+	font-size:28px;
 }
-.mediumText {
-	font-size:21px;
+.jobDescription .mediumText {
+	font-size:16px;
 }
-.smallText {
+.jobDescription .smallText {
 	padding-top:5px;
 	font-size:18px;
 }
@@ -339,6 +353,30 @@ h1 {
 /* -------------------- ------------------ -------------------- */
 /* -------------------- Project Experience -------------------- */
 /* -------------------- ------------------ -------------------- */
+#project_background_Hyperloop {
+	height:100%;
+	width:100%;
+	background:url("img/projects/Hyperloop.png") no-repeat center center;
+	background-size:cover;
+}
+#project_background_LIT {
+	height:100%;
+	width:100%;
+	background:url("img/projects/LIT.png") no-repeat center center;
+	background-size:cover;
+}
+#project_background_THOR {
+	height:100%;
+	width:100%;
+	background:url("img/projects/THOR.jpg") no-repeat center center;
+	background-size:cover;
+}
+#project_background_Micromouse {
+	height:100%;
+	width:100%;
+	background:url("img/projects/Micromouse.png") no-repeat center center;
+	background-size:cover;
+}
 .project {
 	display:inline-block;
 	position:relative;
@@ -355,24 +393,101 @@ h1 {
 	margin:2px;
 	background:rgba(232,232,232,0.9);
 }
+.projectTitle {
+	top:-16px;
+	position:relative;
+	font-size:25px;
+	color:rgba(232,232,232,0.9);
+}
 .project:hover {
 	background:rgba(25,25,25,0.8);
 }
 .project:hover .projectImage {
 	background:rgba(232,232,232,0.1);
 }
-.project div p {
-	top:-16px;
-	position:relative;
-	font-size:25px;
-	color:rgba(232,232,232,0.95);
+.project:hover .projectTitle {
+	color:rgba(232,232,232,0.1);
 }
-.spacer {
-	height:20px;
+.projectDescription {
+	top:0px;
+	position:absolute;
+	margin:5px 10px;
+	opacity:0;
+	cursor:pointer;
+	-webkit-transition:opacity 0.5s;
+	transition:opacity 0.5s;
+}
+.project div div p, .project div p {
+	margin:5px;
+	color:white;
+}
+.projectDescription .largeText {
+	font-size:28px;
+}
+.projectDescription .mediumText {
+	clear:left;
+	font-size:16px;
+}
+.projectDescription .smallText {
+	padding-top:5px;
+	font-size:18px;
+}
+
+/* -------------------- ---------- -------------------- */
+/* -------------------- Contact Me -------------------- */
+/* -------------------- ---------- -------------------- */
+#contactMeTitle {
+	margin:0px auto;
+	font-size:50px;
+	color:white;
+}
+.contactMeText {
+	margin:10px auto 20px auto;
+	font-size:20px;
+	color:white;
+}
+
+/* -------------------- ---- -------------------- */
+/* -------------------- Form -------------------- */
+/* -------------------- ---- -------------------- */
+form {
+    margin:10px auto;
+    max-width:308px;
+    text-align:center;
+}
+input, textarea {
+	float:none;
+	margin:5px; auto;
+	padding:4px;
 	width:100%;
+	max-width:300px;
+	border:none;
+	border-radius:2px;
+	font-size:18px;
+	color:rgb(7,41,77);
+	background-color:white;
 }
-
-
+input:focus {
+	outline:none;
+}
+#userName, #userEmail, #userMessage {
+	-webkit-box-shadow:inset 0px 0px 4px #0A0A0A;
+	-moz-box-shadow:inset 0px 0px 4px #0A0A0A;
+	-o-box-shadow:inset 0px 0px 4px #0A0A0A;
+	box-shadow:inset 0px 0px 4px #0A0A0A;
+}
+#formSubmit {
+	max-width:308px;
+	-webkit-box-shadow:0px 5px 10px #0A0A0A;
+	-moz-box-shadow:0px 5px 10px #0A0A0A;
+	-o-box-shadow:0px 5px 10px #0A0A0A;
+	box-shadow:0px 5px 10px #0A0A0A;
+}
+#formSubmit:hover {
+	-webkit-box-shadow:inset 0px 0px 5px #0A0A0A;
+	-moz-box-shadow:inset 0px 0px 5px #0A0A0A;
+	-o-box-shadow:inset 0px 0px 5px #0A0A0A;
+	box-shadow:inset 0px 0px 5px #0A0A0A;
 
 
 

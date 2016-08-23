@@ -63,26 +63,25 @@ CONTACT INFO: wachterfreddy@gmail.com
 
 						<div class="job">
 							<div class="jobImage">
-								<div id="background1_job" class="background"></div>
+								<div id="job_background_ASL" class="background"></div>
 							</div>
 							<p class="jobTitle">Intern at Autonomous Systems Lab ETHZ</p>
 							<div class="jobDescription">
-								<p class="largeText left">Autonomous Systems Lab</p>
-								<p class="largeText right">Zurich, Switzerland</p>
+								<p class="largeText">Autonomous Systems Laboratory</p>
 								<p class="mediumText">Research Engineer at Swiss Federal Institute of Technology</p>
 								<p class="mediumText">March 2016 to September 2016</p>
-								<p class="smallText">Developed ROS/MoveIt! integration for the YuMi ABB robot
-									in order to allow for path planning from an external system.</p>
+								<p class="smallText">Developed ROS driver to interface with an ABB YuMi robot.
+									Also developed the interface between YuMi and a robot manipulation software
+									called MoveIt! in C++. All contributions are public on GitHub.</p>
 							</div>
 						</div>
 						<div class="job">
 							<div class="jobImage">
-								<div id="background2_job" class="background"></div>
+								<div id="job_background_PTW" class="background"></div>
 							</div>
 							<p class="jobTitle">Intern at Production Technology West</p>
 							<div class="jobDescription">
-								<p class="largeText left">Production Technology West</p>
-								<p class="largeText right">Trollhattan, Sweden</p>
+								<p class="largeText">Production Technology West</p>
 								<p class="mediumText">Research Engineer at University West (Hogskolan Vast)</p>
 								<p class="mediumText">September 2014 to March 2015</p>
 								<p class="smallText">Developed algorithms to charaterize defects within 
@@ -95,37 +94,91 @@ CONTACT INFO: wachterfreddy@gmail.com
 				</div>
 			</section>
 			<section id="page2" class="page">
-				<div id="tint3">
-					<div id="pageContent" class="center">
+				<div id="tint3" class="scroll">
+					<div id="contentPage2" class="center">
 						<div class="spacer"></div>
 						<div class="project">
-							<div class="projectImage"></div>
+							<div class="projectImage">
+								<div id="project_background_Hyperloop" class="background"></div>
+							</div>
+							<p class="projectTitle">Drexel Hyperloop</p>
 							<div class="projectDescription">
-								<p>Project Title</p>
+								<p class="largeText">Drexel Hyperloop Team</p>
+								<p class="mediumText">Steering Committee Member and Sponsorship Head</p>
+								<p class="mediumText">June 2015 to Present</p>
+								<p class="smallText">Primarily involved in determining team direction and 
+									facilitated sponsorships. Developed the original organizational structure,
+									Interfaced between university advisors, university staff, and sponsors. 
+									Raised over $65,000 as sponsorship head.</p>
 							</div>
 						</div>
 						<div class="project">
-							<div class="projectImage"></div>
+							<div class="projectImage">
+								<div id="project_background_LIT" class="background"></div>
+							</div>
+							<p class="projectTitle">LIT</p>
 							<div class="projectDescription">
-								<p>Project Title</p>
+								<p class="largeText">Light Interactive Technology</p>
+								<p class="mediumText">Programmer and Team Member</p>
+								<p class="mediumText">March 2016 to Present</p>
+								<p class="smallText">Developed a simulation in MATLAB that displays 3D contours
+									using a discrete array of circular objects dangling from a motor at the top
+									of the structure. This simulation was primarily used as a prototype of the 
+									full system and generated data used to build an animation of the product.</p>
 							</div>
 						</div>
 						<div class="project">
-							<div class="projectImage"></div>
+							<div class="projectImage">
+								<div id="project_background_THOR" class="background"></div>
+							</div>
+							<p class="projectTitle">THOR</p>
 							<div class="projectDescription">
-								<p>Project Title</p>
+								<p class="largeText">Three Omni-Wheeled Robot</p>
+								<p class="mediumText">Programmer</p>
+								<p class="mediumText">March 2015 to September 2015</p>
+								<p class="smallText">Wrote controller for a three omni-wheeled robot for
+									interfacing with a remote controller and encorders in Arduino C. Learned
+									how to use PID and interrupts using an Arduino and dealing with remote 
+									controllers, encorder feedback, and data smoothing techniques.</p>
 							</div>
 						</div>
 						<div class="project">
-							<div class="projectImage"></div>
+							<div class="projectImage">
+								<div id="project_background_Micromouse" class="background"></div>
+							</div>
+							<p class="projectTitle">Micromouse</p>
 							<div class="projectDescription">
-								<p>Project Title</p>
+								<p class="largeText">Micromouse</p>
+								<p class="mediumText">Programmer</p>
+								<p class="mediumText">June 2016 to Present</p>
+								<p class="smallText">Developed structure in MATLAB that allows for Micromouse maps
+									to be graphically created by the user. This structure is integrated with the 
+									A* algorithm which can be run on the map in order to determine the shortest 
+									path from the start to end location.</p>
 							</div>
 						</div>
+						<div class="bottomSpacer"></div>
 					</div>
 				</div>
 			</section>
 			<section id="page3" class="page">
+				<div class="no_tint">
+					<div id="contentPage3" class="center">
+						<div class="spacer"></div>
+						<p id="contactMeTitle">Contact Me</p>
+						<p class="contactMeText">If you would like to contact me, please use the form below</p>
+						<form id="#contactForm">
+						    <input id="userName" placeholder="Name" type="text" name="name" required>
+						    <input id="userEmail" placeholder="Email" type="email" name="_replyto" required>
+						    <textarea id="userMessage" placeholder="Message" rows="4" width="100"></textarea>
+						    <!-- Configureations -->
+						    <input type="hidden" name="_cc" value="wachterfreddy@gmail.com">
+						    <input type="hidden" name="_subject" value="DSSL Contact Request">
+							<!-- Submission -->
+						    <input id="formSubmit" class="icon" type="submit" value="Send">
+						</form>
+					</div>
+				</div>
 			</section>
 			
 			<!--=============== ====== ===============-->
@@ -140,7 +193,7 @@ CONTACT INFO: wachterfreddy@gmail.com
 				<div class="footerButton icon notActive"></div>
 				<div class="footerButton icon notActive"></div>
 				<p id="footerText">Home</p>
-				<p id="lastModified">Last Updated: May 31st, 2016</p>
+				<p id="lastModified">Last Updated: August 23rd, 2016</p>
 			</section>
 		<div>
 	</main>
