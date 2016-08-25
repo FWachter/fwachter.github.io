@@ -1,7 +1,6 @@
 /*
 PROGRAMMER: Frederick Wachter
 DATE CREATED: 2016-04-13
-LAST MODIFIED: 2016-05-30
 PURPOSE: Engineering Portfolio of Frederick Wachter
 CONTACT INFO: wachterfreddy@gmail.com
 */
@@ -20,6 +19,10 @@ CONTACT INFO: wachterfreddy@gmail.com
 @font-face {
 	font-family:HelveticaNeue-Light;
 	src: url("font/HelveticaNeue-Light.otf") format("opentype");
+}
+@font-face {
+	font-family:HelveticaNeue-CondensedBold;
+	src: url("font/HelveticaNeue-CondensedBold.otf") format("opentype");
 }
 
 /* -------------------- --------- -------------------- */
@@ -55,6 +58,10 @@ section {
 h1 {
 	font-size:30px;
 }
+
+/* -------------------- --------------- -------------------- */
+/* -------------------- General Classes -------------------- */
+/* -------------------- --------------- -------------------- */
 .icon:hover {
 	opacity:0.8;
 	cursor:pointer;
@@ -94,6 +101,21 @@ h1 {
 }
 .scroll {
 	overflow-y:scroll;
+}
+.background {
+	-webkit-transition:opacity 0.4s;
+	transition:opacity 0.4s;
+}
+.largeText {
+	font-family:HelveticaNeue-CondensedBold, HelveticaNeue-Thin, Helvetica, Arial;
+	font-size:28px;
+}
+.mediumText {
+	padding-top:5px;
+	font-size:18px;
+}
+.smallText {
+	font-size:16px;
 }
 
 /* -------------------- --------------- -------------------- */
@@ -199,43 +221,39 @@ h1 {
 	transition:background-color 1.5s;
 }
 
-/* -------------------- ----- -------------------- */
-/* -------------------- Pages -------------------- */
-/* -------------------- ----- -------------------- */
+/* -------------------- -------------------- -------------------- */
+/* -------------------- Page Classes and Ids -------------------- */
+/* -------------------- -------------------- -------------------- */
 #page1 {
 	background:#0A0A0A url("img/ETH_ASL.jpg") no-repeat center center;
-	background-size:cover;
 }
 #page2 {
 	background:#0A0A0A url("img/DrexelHyperloop.jpg") no-repeat center center;
-	background-size:cover;
 }
 #page3 {
 	background:#0A0A0A url("img/DrexelHyperloopExpo.png") no-repeat center center;
+}
+#page1, #page2, #page3 {
 	background-size:cover;
 }
 #tint1 {
-	position:fixed;
-	height:100%;
-	width:100%;
 	background:-webkit-linear-gradient(141deg,rgba(15,184,173,0.8) 0%,rgba(31,200,219,0.8) 51%,rgba(44,181,232,0.8) 75%);
 	background:linear-gradient(141deg,rgba(15,184,173,0.8) 0%,rgba(31,200,219,0.8) 51%,rgba(44,181,232,0.8) 75%);
 }
 #tint2 {
-	position:fixed;
-	height:100%;
-	width:100%;
 	background:-webkit-linear-gradient(141deg,rgba(44,181,232,0.8),rgba(95,44,130,0.8));
 	background:linear-gradient(141deg,rgba(44,181,232,0.8),rgba(95,44,130,0.8));
 }
 #tint3 {
-	position:fixed;
-	height:100%;
-	width:100%;
 	background:-webkit-linear-gradient(141deg,rgba(95,44,130,0.8),rgba(236,111,102,0.8));
 	background:linear-gradient(141deg,rgba(95,44,130,0.8),rgba(236,111,102,0.8));
 }
-#contentPage1 {
+#tint1, #tine2, #tint3 {
+	position:fixed;
+	height:100%;
+	width:100%;
+}
+#contentPage1, #contentPage2, #contentPage3 {
 	position:relative;
 	top:0;
 	-webkit-transition:top 1s;
@@ -274,24 +292,15 @@ h1 {
 /* -------------------- Engineering Experience -------------------- */
 /* -------------------- ---------------------- -------------------- */
 #job_background_ASL {
-	height:100%;
-	width:100%;
 	background:url("img/work/ASL.png") no-repeat center center;
-	background-size:contain;
 }
 #job_background_PTW {
+	background:url("img/work/PTW.png") no-repeat center center;
+}
+#job_background_ASL, #job_background_PTW {
 	height:100%;
 	width:100%;
-	background:url("img/work/PTW.png") no-repeat center center;
 	background-size:contain;
-}
-.background {
-	/*margin:-10px;
-	position:absolute;
-	opacity:1;
-	cursor:pointer;*/
-	-webkit-transition:opacity 0.4s;
-	transition:opacity 0.4s;
 }
 .job {
 	/*padding:10px;*/
@@ -339,42 +348,25 @@ h1 {
 	margin:5px;
 	color:white;
 }
-.jobDescription .largeText {
-	font-size:28px;
-}
-.jobDescription .mediumText {
-	font-size:16px;
-}
-.jobDescription .smallText {
-	padding-top:5px;
-	font-size:18px;
-}
 
 /* -------------------- ------------------ -------------------- */
 /* -------------------- Project Experience -------------------- */
 /* -------------------- ------------------ -------------------- */
 #project_background_Hyperloop {
-	height:100%;
-	width:100%;
 	background:url("img/projects/Hyperloop.png") no-repeat center center;
-	background-size:cover;
 }
 #project_background_LIT {
-	height:100%;
-	width:100%;
 	background:url("img/projects/LIT.png") no-repeat center center;
-	background-size:cover;
 }
 #project_background_THOR {
-	height:100%;
-	width:100%;
 	background:url("img/projects/THOR.jpg") no-repeat center center;
-	background-size:cover;
 }
 #project_background_Micromouse {
+	background:url("img/projects/Micromouse.png") no-repeat center center;
+}
+#project_background_Hyperloop, #project_background_LIT, #project_background_THOR, #project_background_Micromouse {
 	height:100%;
 	width:100%;
-	background:url("img/projects/Micromouse.png") no-repeat center center;
 	background-size:cover;
 }
 .project {
@@ -420,17 +412,6 @@ h1 {
 .project div div p, .project div p {
 	margin:5px;
 	color:white;
-}
-.projectDescription .largeText {
-	font-size:28px;
-}
-.projectDescription .mediumText {
-	clear:left;
-	font-size:16px;
-}
-.projectDescription .smallText {
-	padding-top:5px;
-	font-size:18px;
 }
 
 /* -------------------- ---------- -------------------- */
@@ -488,9 +469,5 @@ input:focus {
 	-moz-box-shadow:inset 0px 0px 5px #0A0A0A;
 	-o-box-shadow:inset 0px 0px 5px #0A0A0A;
 	box-shadow:inset 0px 0px 5px #0A0A0A;
-
-
-
-
 
 
