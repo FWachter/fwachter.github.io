@@ -12,8 +12,9 @@ var pageIndex = 0; // indicated the current page of the user
 var totalPages = $(".footerButton").length; // indicates the amount of available pages on the webpage
 var videoDisplayFlag_Page1 = 0; // indicates if videos should be displayed on page 1
 var sidebarDisplayFlag = 1; // indicates if the sidebar should be displayed
+var resumeButtonDisplayFlag = 1;// indicates if the sidebar should be displayed
 var jobIndexAdjust = $("#contentPage1").children().length - $(".job").length; // Adjustment to job index
-var projectIndexAdjust =  $("#contentPage2").children().length - $(".project").length - 1; // Adjustment to project index
+var projectIndexAdjust = $("#contentPage2").children().length - $(".project").length - 1; // Adjustment to project index
 
 /* -------------------- ------------- -------------------- */
 /* -------------------- Window Resize -------------------- */
@@ -22,8 +23,9 @@ windowResize();
 
 $(window).resize(function() {windowResize();});
 function windowResize() {
-	var windowWidth = $(window).width();
+	var windowWidth  = $(window).width();
 	var windowHeight = $(window).height();
+
 	$("#intro").css({
 		"height":windowHeight + "px"
 	});
@@ -35,6 +37,14 @@ function windowResize() {
 		"top":(windowHeight / 2) + "px",
 		"left":(windowWidth / 2) + "px" 
 	});
+
+	if ((resumeButtonDisplayFlag) && (windowWidth < 875)) {
+		$("#resumeButton").addClass("hidden");
+		resumeButtonDisplayFlag = 0;
+	} else if ((!resumeButtonDisplayFlag) && windowWidth >= 875) { 
+		$("#resumeButton").removeClass("hidden");
+		resumeButtonDisplayFlag = 1;	
+	}
 
 	offsetPages(pageIndex,windowWidth);
 	setIconLocation(null,pageIndex,1);
@@ -307,10 +317,6 @@ $("#contentPage3").submit(function(e) {
 });
 
 function clearForm() {
-/* PROGRAMMER: Frederick Wachter
-   DATE CREATED: 2016-05-02
-   PURPOSE: Clear the form
-*/
 	var elems = document.getElementsByTagName("input");
 	var l = elems.length - 1;
 	for (var i = 0; i < l; ++i) {

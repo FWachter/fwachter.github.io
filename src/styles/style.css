@@ -58,6 +58,9 @@ section {
 h1 {
 	font-size:30px;
 }
+a {
+	text-decoration:none;
+}
 
 /* -------------------- --------------- -------------------- */
 /* -------------------- General Classes -------------------- */
@@ -116,6 +119,9 @@ h1 {
 }
 .smallText {
 	font-size:16px;
+}
+.hidden {
+	display:none;
 }
 
 /* -------------------- --------------- -------------------- */
@@ -318,7 +324,7 @@ h1 {
 	height:200px;
 	width:546px;
 	margin:0px 2px;
-	background:rgba(232,232,232,0.9);
+	background:rgba(242,242,242,0.9);
 }
 .jobTitle {
 	top:-16px;
@@ -420,12 +426,28 @@ h1 {
 #contactMeTitle {
 	margin:0px auto;
 	font-size:50px;
+	font-family:HelveticaNeue-CondensedBold, HelveticaNeue-Thin, Helvetica, Arial;
 	color:white;
 }
 .contactMeText {
 	margin:10px auto 20px auto;
 	font-size:20px;
 	color:white;
+}
+#resumeButton {
+	position:absolute;
+	top:15px;
+	right:0px;
+	width:300px;
+	height:40px;
+	font-size:30px;
+	font-family:HelveticaNeue-CondensedBold, HelveticaNeue-Thin, Helvetica, Arial;
+	color:white;
+}
+#resumeButton:hover {
+	background-color:white;
+	color:black;
+	cursor:pointer;
 }
 
 /* -------------------- ---- -------------------- */
@@ -445,7 +467,7 @@ input, textarea {
 	border:none;
 	border-radius:2px;
 	font-size:18px;
-	color:rgb(7,41,77);
+	color:black;
 	background-color:white;
 }
 input:focus {
@@ -459,6 +481,7 @@ input:focus {
 }
 #formSubmit {
 	max-width:308px;
+	font-family:HelveticaNeue-CondensedBold, HelveticaNeue-Thin, Helvetica, Arial;
 	-webkit-box-shadow:0px 5px 10px #0A0A0A;
 	-moz-box-shadow:0px 5px 10px #0A0A0A;
 	-o-box-shadow:0px 5px 10px #0A0A0A;
