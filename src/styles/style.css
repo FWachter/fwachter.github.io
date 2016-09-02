@@ -24,6 +24,86 @@ CONTACT INFO: wachterfreddy@gmail.com
 	font-family:HelveticaNeue-CondensedBold;
 	src: url("font/HelveticaNeue-CondensedBold.otf") format("opentype");
 }
+@font-face {
+	font-family:FontAwesome;
+	src: url('font/fontawesome-webfont.eot');
+	src: url('font/fontawesome-webfont.eot?#iefix') format('embedded-opentype'), 
+		 url('font/fontawesome-webfont.woff') format('woff'), 
+		 url('font/fontawesome-webfont.ttf') format('truetype'),
+		 url('font/fontawesome-webfont.svg') format('svg');
+	font-weight:normal;
+	font-style:normal;
+}
+
+.icon-desktop:before {
+	position:relative;
+	top:-5px;
+	font-family:FontAwesome;
+	content: "\f108";
+	font-style:normal;
+	font-size:35px;
+	color:rgb(225,225,224);
+}
+.icon-youtube:before {
+	position:relative;
+	top:-8px;
+	margin-left:8px;
+	font-family:FontAwesome;
+	content: "\f167";
+	font-style:normal;
+	font-size:32px;
+	color:rgb(225,225,224);
+}
+.icon-home:before {
+	position:relative;
+	top:-5px;
+	margin-left:8px;
+	font-family:FontAwesome;
+	content: "\f015";
+	font-style:normal;
+	font-size:35px;
+	color:rgb(225,225,224);
+}
+.icon-github:before {
+	position:relative;
+	top:-5px;
+	margin-left:8px;
+	font-family:FontAwesome;
+	content: "\f09b";
+	font-style:normal;
+	font-size:40px;
+	color:rgb(225,225,224);
+}
+.icon-newspaper:before {
+	position:relative;
+	top:-3px;
+	margin-left:9px;
+	font-family:FontAwesome;
+	content: "\f1ea";
+	font-style:normal;
+	font-size:40px;
+	color:rgb(225,225,224);
+}
+.icon-info:before {
+	position:relative;
+	top:-5px;
+	margin-left:8px;
+	font-family:FontAwesome;
+	content: "\f05a";
+	font-style:normal;
+	font-size:40px;
+	color:rgb(225,225,224);
+}
+.icon-facebook:before {
+	position:relative;
+	top:-5px;
+	margin-left:8px;
+	font-family:FontAwesome;
+	content: "\f230";
+	font-style:normal;
+	font-size:40px;
+	color:rgb(225,225,224);
+}
 
 /* -------------------- --------- -------------------- */
 /* -------------------- Reset CSS -------------------- */
@@ -285,26 +365,14 @@ a {
 	-webkit-transition:left 1.5s;
 	transition:left 1.5s;
 }
-.video {
-	position:relative;
-	float:left;
-		width:50%;
-		max-width:500px;
-}
-#showVideo {
-	position:relative;
-	height:50px;
+.linksBar {
+	position:absolute;
+	height:40px;
 	width:100%;
-	color:black;
-	background:rgba(232,232,232,0.9);
-	box-shadow: 0 4px 5px -2px black;
-	/*background:-webkit-linear-gradient(141deg,rgba(125,125,125,0.9) 0%,rgba(150,150,150,0.9) 51%,rgba(225,225,225,0.9) 100%);
-	background:linear-gradient(141deg,rgba(125,125,125,0.9) 0%,rgba(150,150,150,0.9) 51%,rgba(225,225,225,0.9) 100%);*/
-}
-#showVideo p {
-	margin:0px;
-	padding-top:8px;
-	font-size:30px;
+	bottom:0px;
+	opacity:0;
+	-webkit-transition:all 0.5s;
+	transition:all 0.5s;
 }
 
 /* -------------------- ---------------------- -------------------- */
@@ -322,14 +390,14 @@ a {
 	background-size:contain;
 }
 .job {
-	/*padding:10px;*/
 	position:relative;
 	margin:30px auto;
 	width:550px;
 	height:250px;
 	cursor:pointer;
 	background:rgba(25,25,25,0.95);
-	/*border:1px solid rgba(7,90,85,0.6);*/
+	-webkit-transition:height 0.5s;
+	transition:height 0.5s;
 }
 .jobImage {
 	top:2px;
@@ -346,6 +414,7 @@ a {
 	color:rgba(232,232,232,0.9);
 }
 .job:hover {
+	height:290px;
 	background:rgba(25,25,25,0.8);
 }
 .job:hover .jobImage {
@@ -353,6 +422,9 @@ a {
 }
 .job:hover .jobTitle {
 	color:rgba(232,232,232,0.1);
+}
+.job:hover .linksBar {
+	opacity:1;
 }
 .jobDescription {
 	top:0px;
@@ -397,6 +469,8 @@ a {
 	background-color:none;
 	cursor:pointer;
 	background:rgba(25,25,25,0.9);
+	-webkit-transition:height 0.5s;
+	transition:height 0.5s;
 }
 .projectImage {
 	height:200px;
@@ -411,6 +485,7 @@ a {
 	color:rgba(232,232,232,0.9);
 }
 .project:hover {
+	height:290px;
 	background:rgba(25,25,25,0.8);
 }
 .project:hover .projectImage {
@@ -418,6 +493,9 @@ a {
 }
 .project:hover .projectTitle {
 	color:rgba(232,232,232,0.1);
+}
+.project:hover .linksBar {
+	opacity:1;
 }
 .projectDescription {
 	top:0px;
@@ -448,6 +526,7 @@ a {
 	color:white;
 }
 #resumeButton {
+	padding-top:4px;
 	position:absolute;
 	top:15px;
 	right:0px;
