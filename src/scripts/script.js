@@ -10,7 +10,6 @@ CONTACT INFO: wachterfreddy@gmail.com
 /* -------------------- --------- -------------------- */
 var pageIndex = 0; // indicated the current page of the user
 var totalPages = $(".footerButton").length; // indicates the amount of available pages on the webpage
-var videoDisplayFlag_Page1 = 0; // indicates if videos should be displayed on page 1
 var sidebarDisplayFlag = 1; // indicates if the sidebar should be displayed
 var resumeButtonDisplayFlag = 1;// indicates if the sidebar should be displayed
 var jobIndexAdjust = $("#contentPage1").children().length - $(".job").length; // Adjustment to job index
@@ -49,7 +48,7 @@ function windowResize() {
 	offsetPages(pageIndex,windowWidth);
 	setIconLocation(null,pageIndex,1);
 	adjustVideoSize_Page1(windowWidth);
-	toggleVideoDisplay(windowWidth);
+	// toggleVideoDisplay(windowWidth);
 }
 
 /* -------------------- -------- -------------------- */
@@ -127,37 +126,6 @@ function adjustVideoSize_Page1(windowWidth) {
 		});
 	}
 }
-function toggleVideoDisplay(windowWidth) {
-	var previousSidebarDisplayFlag = sidebarDisplayFlag;
-	if (videoDisplayFlag_Page1 == 0) {
-		var topAdjustment = 0;
-		if (windowWidth < 1000) {
-			topAdjustment = ((-windowWidth / 2) / 1.333);
-		} else if (windowWidth >= 1000) {
-			topAdjustment = -375;
-		}
-		$("#contentPage1").css({
-			"top":topAdjustment + "px"
-		});
-		$("#hideShowVideo_Page1").text("Show Videos");
-		sidebarDisplayFlag = 1;
-	} else if (videoDisplayFlag_Page1 == 1) {
-		if (windowWidth < 1000) {
-			sidebarDisplayFlag = 0;
-		} else if (windowWidth >= 1000) {
-			sidebarDisplayFlag = 1;
-		}
-		$("#contentPage1").css({
-			"top":""
-		});
-		$("#hideShowVideo_Page1").text("Hide Videos");
-	}
-
-	sidebarDisplayFlag = pageFlagReset(sidebarDisplayFlag);
-	if (previousSidebarDisplayFlag != sidebarDisplayFlag) {
-		toggleSidebarDisplay();
-	}
-}
 function toggleSidebarDisplay() {
 	if (sidebarDisplayFlag == 0) {
 		$("#sidebar").css({
@@ -169,19 +137,6 @@ function toggleSidebarDisplay() {
 		});
 	} else {
 		alert("Error (3): Flag was set to incorrect value.");
-	}
-}
-function pageFlagReset(sidebarDisplayFlag) {
-	if (pageIndex != 1) {
-		return 1;
-	} else {
-		var windowWidth = $(window).width();
-		if ((windowWidth <= 1000) && (videoDisplayFlag_Page1 == 1)) {
-			return 0;
-		} else {
-			return 1;
-		}
-			
 	}
 }
 function displayPageName(index) {
@@ -223,25 +178,7 @@ $(".footerButton").click(function() {
 		}
 	}
 
-	displaySidebar = pageFlagReset(sidebarDisplayFlag);
-	if (displaySidebar != sidebarDisplayFlag) {
-		sidebarDisplayFlag = displaySidebar;
-		toggleSidebarDisplay();
-	}
-
 	displayPageName(pageIndex);
-});
-$("#showVideo").click(function() {
-	if (videoDisplayFlag_Page1 == 0) {
-		videoDisplayFlag_Page1 = 1;
-	} else if (videoDisplayFlag_Page1 == 1) {
-		videoDisplayFlag_Page1 = 0;
-	} else {
-		alert("Error (2): Flag was set to incorrect value.");
-	}
-
-	var windowWidth = $(window).width();
-	toggleVideoDisplay(windowWidth);
 });
 
 /* -------------------- --------------- -------------------- */
