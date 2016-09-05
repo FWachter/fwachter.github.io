@@ -476,7 +476,6 @@ a {
 	height:200px;
 	width:446px;
 	margin:2px;
-	background:rgba(232,232,232,0.9);
 }
 .projectTitle {
 	top:-16px;
@@ -487,9 +486,6 @@ a {
 .project:hover {
 	height:290px;
 	background:rgba(25,25,25,0.8);
-}
-.project:hover .projectImage {
-	background:rgba(232,232,232,0.1);
 }
 .project:hover .projectTitle {
 	color:rgba(232,232,232,0.1);
