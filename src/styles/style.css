@@ -37,71 +37,85 @@ CONTACT INFO: wachterfreddy@gmail.com
 
 .icon-desktop:before {
 	position:relative;
-	top:-5px;
 	font-family:FontAwesome;
 	content: "\f108";
 	font-style:normal;
-	font-size:35px;
+	font-size:30px;
 	color:rgb(225,225,224);
 }
 .icon-youtube:before {
 	position:relative;
-	top:-8px;
+	top:-3px;
 	margin-left:8px;
 	font-family:FontAwesome;
 	content: "\f167";
 	font-style:normal;
-	font-size:32px;
+	font-size:27px;
 	color:rgb(225,225,224);
 }
 .icon-home:before {
 	position:relative;
-	top:-5px;
 	margin-left:8px;
 	font-family:FontAwesome;
 	content: "\f015";
 	font-style:normal;
-	font-size:35px;
+	font-size:30px;
 	color:rgb(225,225,224);
 }
 .icon-github:before {
 	position:relative;
-	top:-5px;
 	margin-left:8px;
 	font-family:FontAwesome;
 	content: "\f09b";
 	font-style:normal;
-	font-size:40px;
+	font-size:35px;
 	color:rgb(225,225,224);
 }
 .icon-newspaper:before {
 	position:relative;
-	top:-3px;
+	top:2px;
 	margin-left:9px;
 	font-family:FontAwesome;
 	content: "\f1ea";
 	font-style:normal;
-	font-size:40px;
+	font-size:35px;
 	color:rgb(225,225,224);
 }
 .icon-info:before {
 	position:relative;
-	top:-5px;
 	margin-left:8px;
 	font-family:FontAwesome;
 	content: "\f05a";
 	font-style:normal;
-	font-size:40px;
+	font-size:35px;
 	color:rgb(225,225,224);
 }
 .icon-facebook:before {
 	position:relative;
-	top:-5px;
 	margin-left:8px;
 	font-family:FontAwesome;
 	content: "\f230";
 	font-style:normal;
-	font-size:40px;
+	font-size:35px;
+	color:rgb(225,225,224);
+}
+.icon-document:before {
+	position:relative;
+	top:-2px;
+	margin-left:8px;
+	font-family:FontAwesome;
+	content: "\f15c";
+	font-style:normal;
+	font-size:27px;
+	color:rgb(225,225,224);
+}
+.icon-blog:before {
+	position:relative;
+	margin-left:8px;
+	font-family:FontAwesome;
+	content: "\f143";
+	font-style:normal;
+	font-size:35px;
 	color:rgb(225,225,224);
 }
 
@@ -143,13 +157,11 @@ a {
 }
 ::-webkit-scrollbar {
     width: 12px;
-}
- 
+} 
 ::-webkit-scrollbar-track {
     -webkit-box-shadow:inset 0 0 6px rgba(0,0,0,0.3);
     border-radius:10px;
 }
- 
 ::-webkit-scrollbar-thumb {
     border-radius:10px;
     -webkit-box-shadow:inset 0 0 6px rgba(0,0,0,0.5); 
@@ -168,7 +180,7 @@ a {
 .center {
 	margin:0px auto;
 	text-align:center;
-	max-width:1000px;
+	max-width:1500px;
 }
 .right {
 	position:relative;
@@ -215,6 +227,11 @@ a {
 }
 .hidden {
 	display:none;
+}
+.fullPage {
+	position:absolute;
+	height:100%;
+	width:100%;
 }
 
 /* -------------------- --------------- -------------------- */
@@ -348,7 +365,7 @@ a {
 	background:linear-gradient(141deg,rgba(95,44,130,0.8),rgba(236,111,102,0.8));
 }
 #tint1, #tine2, #tint3 {
-	position:fixed;
+	position:absolute;
 	height:100%;
 	width:100%;
 }
@@ -455,7 +472,34 @@ a {
 #project_background_Micromouse {
 	background:url("img/projects/Micromouse.png") no-repeat center center;
 }
-#project_background_Hyperloop, #project_background_LIT, #project_background_THOR, #project_background_Micromouse {
+#project_background_STAR {
+	background:url("img/projects/STAR.png") no-repeat center center;
+}
+#project_background_Hackathon {
+	background:url("img/projects/Hackathon.png") no-repeat center center;
+}
+#project_background_Hexcopter {
+	background:url("img/projects/Hexcopter.png") no-repeat center center;
+}
+#project_background_MATLAB {
+	background:url("img/projects/MATLAB.png") no-repeat center center;
+}
+#project_background_Golf {
+	background:url("img/projects/Golf.png") no-repeat center center;
+}
+#project_background_RASCAL {
+	background:url("img/projects/RASCAL.png") no-repeat center center;
+}
+#project_background_Canoe {
+	background:url("img/projects/Canoe.jpg") no-repeat center center;
+}
+#project_background_Mead {
+	background:url("img/projects/Mead.jpg") no-repeat center center;
+}
+#project_background_Mapping {
+	background:url("img/projects/Mapping.png") no-repeat center center;
+}
+#project_background_Hyperloop, #project_background_LIT, #project_background_THOR, #project_background_Micromouse, #project_background_STAR, #project_background_Hackathon, #project_background_Hexcopter, #project_background_MATLAB, #project_background_Golf, #project_background_RASCAL, #project_background_Canoe, #project_background_Mead, #project_background_Mapping {
 	height:100%;
 	width:100%;
 	background-size:cover;
@@ -471,12 +515,12 @@ a {
 	background:rgba(25,25,25,0.9);
 	-webkit-transition:height 0.5s;
 	transition:height 0.5s;
+	border:1px solid white;
 }
 .projectImage {
 	height:200px;
 	width:446px;
 	margin:2px;
-	background:rgba(232,232,232,0.9);
 }
 .projectTitle {
 	top:-16px;
@@ -488,9 +532,6 @@ a {
 	height:290px;
 	background:rgba(25,25,25,0.8);
 }
-.project:hover .projectImage {
-	background:rgba(232,232,232,0.1);
-}
 .project:hover .projectTitle {
 	color:rgba(232,232,232,0.1);
 }
@@ -500,7 +541,8 @@ a {
 .projectDescription {
 	top:0px;
 	position:absolute;
-	margin:5px 10px;
+	margin:5px auto;
+	width:100%;
 	opacity:0;
 	cursor:pointer;
 	-webkit-transition:opacity 0.5s;
