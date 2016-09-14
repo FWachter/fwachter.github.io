@@ -212,8 +212,15 @@ $(".job").hover(
 );
 $(".project").hover(
 	function() {
-		sidebarDisplayFlag = 0;
-		toggleSidebarDisplay();
+		var windowWidth = $(window).width();
+		var sidebarWidth = $("#sidebar").width();
+		var projectPosition = $(this).position().left + $(this).width();
+		var tolerance = 5;
+
+		if (projectPosition > (windowWidth - sidebarWidth - tolerance)) {
+			sidebarDisplayFlag = 0;
+			toggleSidebarDisplay();
+		}
 
 		var projectIndex = $(this).index() - projectIndexAdjust;
 		$(".background").eq(projectIndex + $(".job").length).css({
@@ -223,8 +230,10 @@ $(".project").hover(
 			"opacity":"1"
 		});
 	}, function() {
-		sidebarDisplayFlag = 1;
-		toggleSidebarDisplay();
+		if (sidebarDisplayFlag == 0) {
+			sidebarDisplayFlag = 1;
+			toggleSidebarDisplay();
+		}
 
 		var projectIndex = $(this).index() - projectIndexAdjust;
 		$(".background").eq(projectIndex + $(".job").length).css({
