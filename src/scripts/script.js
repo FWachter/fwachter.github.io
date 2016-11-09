@@ -11,8 +11,9 @@ CONTACT INFO: wachterfreddy@gmail.com
 var pageIndex = 0; // indicated the current page of the user
 var totalPages = $(".footerButton").length; // indicates the amount of available pages on the webpage
 var sidebarDisplayFlag = 1; // indicates if the sidebar should be displayed
+var pageTwoScrollFlag = 0; // indicates if the scrollbar is active on the second page
 var resumeButtonDisplayFlag = 1;// indicates if the sidebar should be displayed
-var jobIndexAdjust = $("#contentPage1").children().length - $(".job").length; // Adjustment to job index
+var jobIndexAdjust = $("#contentPage1").children().length - $(".job").length - 1; // Adjustment to job index
 var projectIndexAdjust = $("#contentPage2").children().length - $(".project").length - 1; // Adjustment to project index
 
 /* -------------------- ------------- -------------------- */
@@ -43,6 +44,14 @@ function windowResize() {
 	} else if ((!resumeButtonDisplayFlag) && windowWidth >= 875) { 
 		$("#resumeButton").removeClass("hidden");
 		resumeButtonDisplayFlag = 1;	
+	}
+
+	if ((windowHeight < 800) && (pageTwoScrollFlag == 0)) {
+		$("#tint1").addClass("scroll");
+		pageTwoScrollFlag = 1;
+	} else if ((windowHeight > 800) && (pageTwoScrollFlag == 1)) {
+		$("#tint1").removeClass("scroll");
+		pageTwoScrollFlag = 0;
 	}
 
 	offsetPages(pageIndex,windowWidth);

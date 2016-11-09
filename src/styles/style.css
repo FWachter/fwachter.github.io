@@ -228,6 +228,12 @@ a {
 .hidden {
 	display:none;
 }
+.hideScrollbar {
+	overflow-y:hidden;
+}
+.showScrollbar {
+	overflow-y:visible;
+}
 .fullPage {
 	position:absolute;
 	height:100%;
