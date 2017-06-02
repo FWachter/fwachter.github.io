@@ -401,13 +401,16 @@ a {
 /* -------------------- ---------------------- -------------------- */
 /* -------------------- Engineering Experience -------------------- */
 /* -------------------- ---------------------- -------------------- */
+#job_background_ATL {
+	background:url("img/work/ATL.png") no-repeat center center;
+}
 #job_background_ASL {
 	background:url("img/work/ASL.png") no-repeat center center;
 }
 #job_background_PTW {
 	background:url("img/work/PTW.png") no-repeat center center;
 }
-#job_background_ASL, #job_background_PTW {
+#job_background_ATL, #job_background_ASL, #job_background_PTW {
 	height:100%;
 	width:100%;
 	background-size:contain;
