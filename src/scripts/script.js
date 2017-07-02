@@ -5,16 +5,24 @@ PURPOSE: Engineering Portfolio of Frederick Wachter
 CONTACT INFO: wachterfreddy@gmail.com
 */
 
-/* -------------------- --------- -------------------- */
-/* -------------------- Variables -------------------- */
-/* -------------------- --------- -------------------- */
+/* -------------------- ---------------------- -------------------- */
+/* -------------------- User Defined Variables -------------------- */
+/* -------------------- ---------------------- -------------------- */
+var pageNames = ["Home", "About Me", "Engineering Experience", "Project Experience", "Contact Me"];
+
+/* -------------------- ---------------- -------------------- */
+/* -------------------- Static Variables -------------------- */
+/* -------------------- ---------------- -------------------- */
 var pageIndex = 0; // indicated the current page of the user
 var totalPages = $(".footerButton").length; // indicates the amount of available pages on the webpage
 var sidebarDisplayFlag = 1; // indicates if the sidebar should be displayed
 var pageTwoScrollFlag = 0; // indicates if the scrollbar is active on the second page
-var resumeButtonDisplayFlag = 1;// indicates if the sidebar should be displayed
-var jobIndexAdjust = $("#contentPage1").children().length - $(".job").length - 1; // Adjustment to job index
-var projectIndexAdjust = $("#contentPage2").children().length - $(".project").length - 1; // Adjustment to project index
+var resumeButtonDisplayFlag = 1; // indicates if the sidebar should be displayed
+var sidebarDisplayTolerance = 30; // tolerance to decide to display sidebar or not
+
+var platformIndexAdjust = $("#contentPage1").children().length - $(".platform").length - 1; // Adjustment to platform index
+var jobIndexAdjust = $("#contentPage2").children().length - $(".job").length - 1; // Adjustment to job index
+var projectIndexAdjust = $("#contentPage3").children().length - $(".project").length - 1; // Adjustment to project index
 
 /* -------------------- ------------- -------------------- */
 /* -------------------- Window Resize -------------------- */
@@ -54,10 +62,15 @@ function windowResize() {
 		pageTwoScrollFlag = 0;
 	}
 
+	var lastJob = $(".job").eq($(".job").length-1);
+	var jobBottomPosition = lastJob.offset().top + lastJob.height();
+	if ((windowHeight - jobBottomPosition - 200) < 0) {
+		$("#page2").addClass("scroll");
+	}
+
 	offsetPages(pageIndex,windowWidth);
 	setIconLocation(null,pageIndex,1);
 	adjustVideoSize_Page1(windowWidth);
-	// toggleVideoDisplay(windowWidth);
 }
 
 /* -------------------- -------- -------------------- */
@@ -150,15 +163,7 @@ function toggleSidebarDisplay() {
 }
 function displayPageName(index) {
 	var pageName;
-	if (index == 0) {
-		pageName = "Home";
-	} else if (index == 1) {
-		pageName = "Engineering Experience";
-	} else if (index == 2) {
-		pageName = "Project Experience";
-	} else if (index == 3) {
-		pageName = "Contact Me";
-	}
+	pageName = pageNames[index];
 	$("#footerText").text(pageName);
 }
 
@@ -200,18 +205,65 @@ $(".footerButton").hover(
 		displayPageName(pageIndex);
 	}
 );
+$(".platform").hover(
+	function() {
+		var windowWidth = $(window).width();
+		var sidebarWidth = $("#sidebar").width();
+		var platformPosition = $(this).position().left + $(this).width();
+
+		if (platformPosition > (windowWidth - sidebarWidth - sidebarDisplayTolerance)) {
+			sidebarDisplayFlag = 0;
+			toggleSidebarDisplay();
+		}
+
+		var platformIndex = $(this).index() - platformIndexAdjust;
+		$(".background").eq(platformIndex).css({
+			"opacity":"0.2"
+		});
+		$(".platformDescription").eq(platformIndex).css({
+			"opacity":"1"
+		});
+	}, function() {
+		if (sidebarDisplayFlag == 0) {
+			sidebarDisplayFlag = 1;
+			toggleSidebarDisplay();
+		}
+
+		var platformIndex = $(this).index() - platformIndexAdjust;
+		$(".background").eq(platformIndex).css({
+			"opacity":""
+		});
+		$(".platformDescription").eq(platformIndex).css({
+			"opacity":""
+		});
+	}
+);
 $(".job").hover(
 	function() {
+		var windowWidth = $(window).width();
+		var sidebarWidth = $("#sidebar").width();
+		var jobPosition = $(this).position().left + $(this).width();
+
+		if (jobPosition > (windowWidth - sidebarWidth - sidebarDisplayTolerance)) {
+			sidebarDisplayFlag = 0;
+			toggleSidebarDisplay();
+		}
+
 		var jobIndex = $(this).index() - jobIndexAdjust;
-		$(".background").eq(jobIndex).css({
+		$(".background").eq(jobIndex + $(".platform").length).css({
 			"opacity":"0.2"
 		});
 		$(".jobDescription").eq(jobIndex).css({
 			"opacity":"1"
 		});
 	}, function() {
+		if (sidebarDisplayFlag == 0) {
+			sidebarDisplayFlag = 1;
+			toggleSidebarDisplay();
+		}
+
 		var jobIndex = $(this).index() - jobIndexAdjust;
-		$(".background").eq(jobIndex).css({
+		$(".background").eq(jobIndex + $(".platform").length).css({
 			"opacity":""
 		});
 		$(".jobDescription").eq(jobIndex).css({
@@ -224,15 +276,14 @@ $(".project").hover(
 		var windowWidth = $(window).width();
 		var sidebarWidth = $("#sidebar").width();
 		var projectPosition = $(this).position().left + $(this).width();
-		var tolerance = 5;
 
-		if (projectPosition > (windowWidth - sidebarWidth - tolerance)) {
+		if (projectPosition > (windowWidth - sidebarWidth - sidebarDisplayTolerance)) {
 			sidebarDisplayFlag = 0;
 			toggleSidebarDisplay();
 		}
 
 		var projectIndex = $(this).index() - projectIndexAdjust;
-		$(".background").eq(projectIndex + $(".job").length).css({
+		$(".background").eq(projectIndex + $(".platform").length + $(".job").length).css({
 			"opacity":"0.2"
 		});
 		$(".projectDescription").eq(projectIndex).css({
@@ -245,7 +296,7 @@ $(".project").hover(
 		}
 
 		var projectIndex = $(this).index() - projectIndexAdjust;
-		$(".background").eq(projectIndex + $(".job").length).css({
+		$(".background").eq(projectIndex + $(".platform").length + $(".job").length).css({
 			"opacity":""
 		});
 		$(".projectDescription").eq(projectIndex).css({

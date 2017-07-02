@@ -10,27 +10,27 @@ CONTACT INFO: wachterfreddy@gmail.com
 /* -------------------- ----- -------------------- */
 @font-face {
 	font-family:SlimJoe;
-	src: url("font/Slim_Joe.otf") format("opentype");
+	src: url(font/Slim_Joe.otf) format("opentype");
 }
 @font-face {
 	font-family:HelveticaNeue-Thin;
-	src: url("font/HelveticaNeue-Thin.otf") format("opentype");
+	src: url(font/HelveticaNeue-Thin.otf) format("opentype");
 }
 @font-face {
 	font-family:HelveticaNeue-Light;
-	src: url("font/HelveticaNeue-Light.otf") format("opentype");
+	src: url(font/HelveticaNeue-Light.otf) format("opentype");
 }
 @font-face {
 	font-family:HelveticaNeue-CondensedBold;
-	src: url("font/HelveticaNeue-CondensedBold.otf") format("opentype");
+	src: url(font/HelveticaNeue-CondensedBold.otf) format("opentype");
 }
 @font-face {
 	font-family:FontAwesome;
-	src: url('font/fontawesome-webfont.eot');
-	src: url('font/fontawesome-webfont.eot?#iefix') format('embedded-opentype'), 
-		 url('font/fontawesome-webfont.woff') format('woff'), 
-		 url('font/fontawesome-webfont.ttf') format('truetype'),
-		 url('font/fontawesome-webfont.svg') format('svg');
+	src: url(font/fontawesome-webfont.eot);
+	src: url(font/fontawesome-webfont.eot?#iefix) format('embedded-opentype'), 
+		 url(font/fontawesome-webfont.woff) format('woff'), 
+		 url(font/fontawesome-webfont.ttf) format('truetype'),
+		 url(font/fontawesome-webfont.svg) format('svg');
 	font-weight:normal;
 	font-style:normal;
 }
@@ -225,6 +225,17 @@ a {
 .smallText {
 	font-size:16px;
 }
+.pageTitle {
+	margin:0px auto;
+	font-size:50px;
+	font-family:HelveticaNeue-CondensedBold, HelveticaNeue-Thin, Helvetica, Arial;
+	color:white;
+}
+.pageText {
+	margin:10px auto 20px auto;
+	font-size:20px;
+	color:white;
+}
 .hidden {
 	display:none;
 }
@@ -238,6 +249,13 @@ a {
 	position:absolute;
 	height:100%;
 	width:100%;
+}
+.black_out {
+	-webkit-box-shadow:0px 0px 15px 15px rgba(0, 0, 0, 0.65);
+	-moz-box-shadow:0px 0px 15px 15px rgba(0, 0, 0, 0.65);
+	-o-box-shadow:0px 0px 15px 15px rgba(0, 0, 0, 0.65);
+	box-shadow:0px 0px 15px 15px rgba(0, 0, 0, 0.65);
+	background-color:rgba(0, 0, 0, 0.65);;
 }
 
 /* -------------------- --------------- -------------------- */
@@ -347,15 +365,21 @@ a {
 /* -------------------- Page Classes and Ids -------------------- */
 /* -------------------- -------------------- -------------------- */
 #page1 {
-	background:#0A0A0A url("img/ETH_ASL.jpg") no-repeat center center;
+	background:#0A0A0A url(img/ETH_ASL_YuMi.jpg) no-repeat center center;
 }
 #page2 {
-	background:#0A0A0A url("img/DrexelHyperloop.jpg") no-repeat center center;
+	background:#0A0A0A url(img/ETH_ASL_Tint.png) no-repeat center center;
 }
 #page3 {
-	background:#0A0A0A url("img/DrexelHyperloopExpo.png") no-repeat center center;
+	background:#0A0A0A url(img/DrexelHyperloop_Tint.png) no-repeat center center;
+}
+#page4 {
+	background:#0A0A0A url(img/DrexelHyperloopExpo.png) no-repeat center center;
 }
 #page1, #page2, #page3 {
+	height:100%;
+}
+#page4 {
 	background-size:cover;
 }
 #tint1 {
@@ -370,12 +394,17 @@ a {
 	background:-webkit-linear-gradient(141deg,rgba(95,44,130,0.8),rgba(236,111,102,0.8));
 	background:linear-gradient(141deg,rgba(95,44,130,0.8),rgba(236,111,102,0.8));
 }
-#tint1, #tine2, #tint3 {
+#tint4 {
+	background:-webkit-linear-gradient(141deg,rgba(0,0,0,0.95),rgba(0,0,0,0.4));
+	background:linear-gradient(141deg,rgba(0,0,0,0.95),rgba(0,0,0,0.4));
+}
+#tint1, #tine2, #tint3, #tint4 {
 	position:absolute;
 	height:100%;
 	width:100%;
+	-webkit-backface-visibility:hidden;
 }
-#contentPage1, #contentPage2, #contentPage3 {
+#contentPage1, #contentPage2, #contentPage3, #contentPage4 {
 	position:relative;
 	top:0;
 	-webkit-transition:top 1s;
@@ -398,17 +427,118 @@ a {
 	transition:all 0.5s;
 }
 
+/* -------------------- -------------------- -------------------- */
+/* -------------------- Platform Development -------------------- */
+/* -------------------- -------------------- -------------------- */
+#platform_background_hexcopter {
+	background:url(img/platforms/Hexcopter.jpg) no-repeat center center;
+}
+#platform_background_tdmr {
+	background:url(img/platforms/Mapping.png) no-repeat center center;
+}
+#platform_background_robot_arm {
+	background:url(img/platforms/Robot_Arm.png) no-repeat center center;
+}
+#platform_background_thor {
+	background:url(img/platforms/THOR.jpg) no-repeat center center;
+}
+#platform_background_hyperloop {
+	background:url(img/platforms/Hyperloop.png) no-repeat center center;
+}
+#platform_background_yumi {
+	background:url(img/platforms/YuMi.png) no-repeat center center;
+}
+#platform_background_dragon {
+	background:url(img/platforms/Dragon.jpg) no-repeat center center;
+}
+#platform_background_micromouse {
+	background:white url(img/platforms/Micromouse.png) no-repeat center center;
+}
+#platform_background_swerve {
+	background:white url(img/platforms/Swerve.png) no-repeat center center;
+}
+#platform_background_auto_flight {
+	background:white url(img/platforms/ATL.png) no-repeat center center;
+}
+#platform_background_auto_boat {
+	background:white url(img/platforms/ATL.png) no-repeat center center;
+}
+#platform_background_hexcopter, #platform_background_tdmr, #platform_background_robot_arm, 
+#platform_background_thor, #platform_background_hyperloop, #platform_background_yumi, 
+#platform_background_dragon, #platform_background_micromouse, #platform_background_swerve,
+#platform_background_auto_flight, #platform_background_auto_boat {
+	height:100%;
+	width:100%;
+	background-size:cover;
+}
+#platform_background_micromouse, #platform_background_swerve, #platform_background_auto_flight, 
+#platform_background_auto_boat {
+	background-size:contain;
+}
+.platform {
+	display:inline-block;
+	position:relative;
+	margin:2px auto;
+	height:200px;
+	width:300px;
+	cursor:pointer;
+	background:rgba(25,25,25,0.95);
+	-webkit-transition:height 0.5s;
+	transition:height 0.5s;
+}
+.platformImage {
+	top:2px;
+	position:relative;
+	height:150px;
+	width:296px;
+	margin:0px 2px;
+	background:whitesmoke;
+}
+.platformDescription {
+	top:0px;
+	position:absolute;
+	margin:5px 10px;
+	opacity:0;
+	cursor:pointer;
+	-webkit-transition:opacity 0.5s;
+	transition:opacity 0.5s;
+}
+.platform div div p, .platform div p {
+	margin:5px;
+	color:white;
+}
+.platform:hover {
+	height:240px;
+	background:rgba(25,25,25,0.8);
+}
+.platform:hover .platformImage {
+	background:rgba(232,232,232,0.1);
+}
+.platform:hover .blockTitle {
+	color:rgba(232,232,232,0.1);
+}
+.platform:hover .linksBar {
+	opacity:1;
+}
+
+#aboutMeDescription {
+	margin:auto auto;
+	padding:10px;
+	width:80%;
+	text-align:center;
+}
+
 /* -------------------- ---------------------- -------------------- */
 /* -------------------- Engineering Experience -------------------- */
 /* -------------------- ---------------------- -------------------- */
 #job_background_ATL {
-	background:url("img/work/ATL.png") no-repeat center center;
+	background:url(img/work/ATL.png) no-repeat center center;
 }
 #job_background_ASL {
-	background:url("img/work/ASL.png") no-repeat center center;
+	background:url(img/work/ASL.png) no-repeat center center;
 }
 #job_background_PTW {
-	background:url("img/work/PTW.png") no-repeat center center;
+	background:url(img/work/PTW.png) no-repeat center center;
 }
 #job_background_ATL, #job_background_ASL, #job_background_PTW {
 	height:100%;
@@ -418,8 +548,8 @@ a {
 .job {
 	position:relative;
 	margin:30px auto;
-	width:550px;
 	height:250px;
+	width:550px;
 	cursor:pointer;
 	background:rgba(25,25,25,0.95);
 	-webkit-transition:height 0.5s;
@@ -431,26 +561,7 @@ a {
 	height:200px;
 	width:546px;
 	margin:0px 2px;
-	background:rgba(242,242,242,0.9);
-}
-.jobTitle {
-	top:-16px;
-	position:relative;
-	font-size:25px;
-	color:rgba(232,232,232,0.9);
-}
-.job:hover {
-	height:290px;
-	background:rgba(25,25,25,0.8);
-}
-.job:hover .jobImage {
-	background:rgba(232,232,232,0.1);
-}
-.job:hover .jobTitle {
-	color:rgba(232,232,232,0.1);
-}
-.job:hover .linksBar {
-	opacity:1;
+	background:whitesmoke;
 }
 .jobDescription {
 	top:0px;
@@ -465,50 +576,67 @@ a {
 	margin:5px;
 	color:white;
 }
+.job:hover {
+	height:290px;
+	background:rgba(25,25,25,0.8);
+}
+.job:hover .jobImage {
+	background:rgba(232,232,232,0.1);
+}
+.job:hover .blockTitle {
+	color:rgba(232,232,232,0.1);
+}
+.job:hover .linksBar {
+	opacity:1;
+}
 
 /* -------------------- ------------------ -------------------- */
 /* -------------------- Project Experience -------------------- */
 /* -------------------- ------------------ -------------------- */
 #project_background_Hyperloop {
-	background:url("img/projects/Hyperloop.png") no-repeat center center;
+	background:url(img/projects/Hyperloop.png) no-repeat center center;
 }
 #project_background_LIT {
-	background:url("img/projects/LIT.png") no-repeat center center;
+	background:url(img/projects/LIT.png) no-repeat center center;
 }
 #project_background_THOR {
-	background:url("img/projects/THOR.jpg") no-repeat center center;
+	background:url(img/projects/THOR.jpg) no-repeat center center;
 }
 #project_background_Micromouse {
-	background:url("img/projects/Micromouse.png") no-repeat center center;
+	background:url(img/projects/Micromouse.png) no-repeat center center;
 }
 #project_background_STAR {
-	background:url("img/projects/STAR.png") no-repeat center center;
+	background:url(img/projects/STAR.png) no-repeat center center;
 }
 #project_background_Hackathon {
-	background:url("img/projects/Hackathon.png") no-repeat center center;
+	background:url(img/projects/Hackathon.png) no-repeat center center;
 }
 #project_background_Hexcopter {
-	background:url("img/projects/Hexcopter.png") no-repeat center center;
+	background:url(img/projects/Hexcopter.png) no-repeat center center;
 }
 #project_background_MATLAB {
-	background:url("img/projects/MATLAB.png") no-repeat center center;
+	background:url(img/projects/MATLAB.png) no-repeat center center;
 }
 #project_background_Golf {
-	background:url("img/projects/Golf.png") no-repeat center center;
+	background:url(img/projects/Golf.png) no-repeat center center;
 }
 #project_background_RASCAL {
-	background:url("img/projects/RASCAL.png") no-repeat center center;
+	background:url(img/projects/RASCAL.png) no-repeat center center;
 }
 #project_background_Canoe {
-	background:url("img/projects/Canoe.jpg") no-repeat center center;
+	background:url(img/projects/Canoe.jpg) no-repeat center center;
 }
 #project_background_Mead {
-	background:url("img/projects/Mead.jpg") no-repeat center center;
+	background:url(img/projects/Mead.jpg) no-repeat center center;
 }
 #project_background_Mapping {
-	background:url("img/projects/Mapping.png") no-repeat center center;
+	background:url(img/projects/Mapping.png) no-repeat center center;
 }
-#project_background_Hyperloop, #project_background_LIT, #project_background_THOR, #project_background_Micromouse, #project_background_STAR, #project_background_Hackathon, #project_background_Hexcopter, #project_background_MATLAB, #project_background_Golf, #project_background_RASCAL, #project_background_Canoe, #project_background_Mead, #project_background_Mapping {
+#project_background_Hyperloop, #project_background_LIT, #project_background_THOR, 
+#project_background_Micromouse, #project_background_STAR, #project_background_Hackathon, 
+#project_background_Hexcopter, #project_background_MATLAB, #project_background_Golf, 
+#project_background_RASCAL, #project_background_Canoe, #project_background_Mead, 
+#project_background_Mapping {
 	height:100%;
 	width:100%;
 	background-size:cover;
@@ -518,7 +646,7 @@ a {
 	position:relative;
 	margin:10px 10px;
 	height:250px;
-	width:450px;
+	width:475px;
 	background-color:none;
 	cursor:pointer;
 	background:rgba(25,25,25,0.9);
@@ -528,30 +656,13 @@ a {
 }
 .projectImage {
 	height:200px;
-	width:446px;
+	width:471px;
 	margin:2px;
-}
-.projectTitle {
-	top:-16px;
-	position:relative;
-	font-size:25px;
-	color:rgba(232,232,232,0.9);
-}
-.project:hover {
-	height:290px;
-	background:rgba(25,25,25,0.8);
-}
-.project:hover .projectTitle {
-	color:rgba(232,232,232,0.1);
-}
-.project:hover .linksBar {
-	opacity:1;
 }
 .projectDescription {
 	top:0px;
 	position:absolute;
-	margin:5px auto;
-	width:100%;
+	margin:5px 10px;
 	opacity:0;
 	cursor:pointer;
 	-webkit-transition:opacity 0.5s;
@@ -561,21 +672,30 @@ a {
 	margin:5px;
 	color:white;
 }
+.project:hover {
+	height:290px;
+	background:rgba(25,25,25,0.8);
+}
+.project:hover .blockTitle {
+	color:rgba(232,232,232,0.1);
+}
+.project:hover .linksBar {
+	opacity:1;
+}
+
+/* -------------------- ------------------------ -------------------- */
+/* -------------------- General Block Properties -------------------- */
+/* -------------------- ------------------------ -------------------- */
+.blockTitle {
+	top:-16px;
+	position:relative;
+	font-size:25px;
+	color:rgba(232,232,232,0.9);
+}
 
 /* -------------------- ---------- -------------------- */
 /* -------------------- Contact Me -------------------- */
 /* -------------------- ---------- -------------------- */
-#contactMeTitle {
-	margin:0px auto;
-	font-size:50px;
-	font-family:HelveticaNeue-CondensedBold, HelveticaNeue-Thin, Helvetica, Arial;
-	color:white;
-}
-.contactMeText {
-	margin:10px auto 20px auto;
-	font-size:20px;
-	color:white;
-}
 #resumeButton {
 	padding-top:4px;
 	position:absolute;
