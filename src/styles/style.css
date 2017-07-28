@@ -251,11 +251,11 @@ a {
 	width:100%;
 }
 .black_out {
-	-webkit-box-shadow:0px 0px 40px 25px rgba(0, 0, 0, 0.65);
-	-moz-box-shadow:0px 0px 40px 25px rgba(0, 0, 0, 0.65);
-	-o-box-shadow:0px 0px 40px 25px rgba(0, 0, 0, 0.65);
-	box-shadow:0px 0px 40px 25px rgba(0, 0, 0, 0.65);
-	background-color:rgba(0, 0, 0, 0.65);;
+	-webkit-box-shadow:0px 0px 40px 25px rgba(0, 0, 0, 0.85);
+	-moz-box-shadow:0px 0px 40px 25px rgba(0, 0, 0, 0.85);
+	-o-box-shadow:0px 0px 40px 25px rgba(0, 0, 0, 0.85);
+	box-shadow:0px 0px 40px 25px rgba(0, 0, 0, 0.85);
+	background-color:rgba(0, 0, 0, 0.85);;
 }
 
 /* -------------------- --------------- -------------------- */
@@ -507,13 +507,13 @@ a {
 }
 .platform:hover {
 	height:240px;
-	background:rgba(25,25,25,0.8);
+	background:rgba(25,25,25,1);
 }
 .platform:hover .platformImage {
-	background:rgba(232,232,232,0.1);
+	filter:brightness(0);
 }
 .platform:hover .blockTitle {
-	color:rgba(232,232,232,0.1);
+	color:rgba(232,232,232,0);
 }
 .platform:hover .linksBar {
 	opacity:1;
@@ -577,13 +577,13 @@ a {
 }
 .job:hover {
 	height:290px;
-	background:rgba(25,25,25,0.8);
+	background:rgba(25,25,25,1);
 }
 .job:hover .jobImage {
-	background:rgba(232,232,232,0.1);
+	filter:brightness(0);
 }
 .job:hover .blockTitle {
-	color:rgba(232,232,232,0.1);
+	color:rgba(232,232,232,0);
 }
 .job:hover .linksBar {
 	opacity:1;
@@ -673,10 +673,13 @@ a {
 }
 .project:hover {
 	height:290px;
-	background:rgba(25,25,25,0.8);
+	background:rgba(25,25,25,1);
+}
+.project:hover .projectImage {
+	filter:brightness(0);
 }
 .project:hover .blockTitle {
-	color:rgba(232,232,232,0.1);
+	color:rgba(232,232,232,0);
 }
 .project:hover .linksBar {
 	opacity:1;
