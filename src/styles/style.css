@@ -373,11 +373,8 @@ a {
 #page4 {
 	background:#0A0A0A url(img/DrexelHyperloopExpo.png) no-repeat center center;
 }
-#page1, #page2, #page3 {
+#page1, #page2, #page3, #page4 {
 	height:100%;
-	background-size:cover;
-}
-#page4 {
 	background-size:cover;
 }
 #tint1 {
