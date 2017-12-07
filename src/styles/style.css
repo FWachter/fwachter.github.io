@@ -450,7 +450,7 @@ a {
 	background:white url(img/platforms/Micromouse.png) no-repeat center center;
 }
 #platform_background_swerve {
-	background:white url(img/platforms/Swerve.png) no-repeat center center;
+	background:white url(img/platforms/SwervePlatform.png) no-repeat center center;
 }
 #platform_background_auto_flight {
 	background:white url(img/platforms/ATL.png) no-repeat center center;
@@ -628,11 +628,14 @@ a {
 #project_background_Mapping {
 	background:url(img/projects/Mapping.png) no-repeat center center;
 }
+#project_background_Swerve {
+	background:white url(img/projects/SwervePlatform.png) no-repeat center center;
+}
 #project_background_Hyperloop, #project_background_LIT, #project_background_THOR, 
 #project_background_Micromouse, #project_background_STAR, #project_background_Hackathon, 
 #project_background_Hexcopter, #project_background_MATLAB, #project_background_Golf, 
 #project_background_RASCAL, #project_background_Canoe, #project_background_Mead, 
-#project_background_Mapping {
+#project_background_Mapping, #project_background_Swerve {
 	height:100%;
 	width:100%;
 	background-size:cover;
