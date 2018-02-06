@@ -458,10 +458,13 @@ a {
 #platform_background_auto_boat {
 	background:white url(img/platforms/ATL.png) no-repeat center center;
 }
+#platform_background_soccer {
+	background:white url(img/platforms/Soccer.png) no-repeat center center;
+}
 #platform_background_hexcopter, #platform_background_tdmr, #platform_background_robot_arm, 
 #platform_background_thor, #platform_background_hyperloop, #platform_background_yumi, 
 #platform_background_dragon, #platform_background_micromouse, #platform_background_swerve,
-#platform_background_auto_flight, #platform_background_auto_boat {
+#platform_background_auto_flight, #platform_background_auto_boat, #platform_background_soccer {
 	height:100%;
 	width:100%;
 	background-size:cover;
@@ -631,11 +634,14 @@ a {
 #project_background_Swerve {
 	background:white url(img/projects/SwervePlatform.png) no-repeat center center;
 }
+#project_background_Soccer {
+	background:white url(img/projects/Soccer.png) no-repeat center center;
+}
 #project_background_Hyperloop, #project_background_LIT, #project_background_THOR, 
 #project_background_Micromouse, #project_background_STAR, #project_background_Hackathon, 
 #project_background_Hexcopter, #project_background_MATLAB, #project_background_Golf, 
 #project_background_RASCAL, #project_background_Canoe, #project_background_Mead, 
-#project_background_Mapping, #project_background_Swerve {
+#project_background_Mapping, #project_background_Swerve, #project_background_Soccer {
 	height:100%;
 	width:100%;
 	background-size:cover;
