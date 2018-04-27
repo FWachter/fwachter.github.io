@@ -108,6 +108,15 @@ CONTACT INFO: wachterfreddy@gmail.com
 	font-size:35px;
 	color:rgb(225,225,224);
 }
+.icon-instagram:before {
+	position:relative;
+	margin-left:8px;
+	font-family:FontAwesome;
+	content: "\f16d";
+	font-style:normal;
+	font-size:35px;
+	color:rgb(225,225,224);
+}
 .icon-document:before {
 	position:relative;
 	top:-2px;
